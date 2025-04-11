@@ -1,6 +1,6 @@
 import { Typography } from "@mui/material";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div>
       <Typography variant="h1">WearLuxe</Typography>
