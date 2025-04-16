@@ -1,5 +1,5 @@
 @import "tailwindcss";
-
+@import "../style/font.css";
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -18,7 +18,7 @@
   --color-primary-700: oklch(48.8% 0.243 264.376);
   --color-primary-800: oklch(42.4% 0.199 265.638);
   --color-primary-900: oklch(37.9% 0.146 265.522);
-  --color-primary-900: oklch(28.2% 0.091 267.935);
+  --color-primary-950: oklch(28.2% 0.091 267.935);
   /* primary */
   --color-secondary-50: oklch(98.7% 0.022 95.277);
   --color-secondary-100: oklch(96.2% 0.059 95.617);
@@ -34,8 +34,14 @@
 
   /* --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-roboto);
   --font-mono: var(--font-geist-mono); */
+  --font-iranSans-bold: "iran_sans_bold";
+  --font-iranSans-black: "iran_sans_black";
+  --font-iranSans-extrabold: "iran_sans_extrabold";
+  --font-iranSans-light: "iran_sans_light";
+  --font-iranSans-medium: "iran_sans_medium";
+  --font-iranSans-regular: "iran_sans_regular";
+  --font-iranSans-thin: "iran_sans_thin";
 }
 
 /* @media (prefers-color-scheme: dark) {
