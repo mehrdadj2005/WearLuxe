@@ -20,7 +20,7 @@ export default function ProductCard({
   const discountValid = discountedPrice > 0;
 
   return (
-    <Card className="w-56 h-96 rounded-2xl border border-neutral-200 flex flex-col overflow-hidden">
+    <Card className="max-w-56 h-96 rounded-2xl border border-neutral-200 flex flex-col overflow-hidden cursor-pointer select-none">
       <CardMedia
         component="img"
         image={url}
