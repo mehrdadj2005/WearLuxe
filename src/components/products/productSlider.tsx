@@ -21,23 +21,28 @@ interface ProductSliderProps {
 export default function ProductSlider({ data }: ProductSliderProps) {
   return (
     <Swiper
-      slidesPerView={5}
-      spaceBetween={30}
+      spaceBetween={10}
       freeMode={true}
       modules={[Pagination]}
-      className="mySwiper !px-12 !py-8"
+      className="!px-2 !py-4"
       breakpoints={{
-        320: {
-          slidesPerView: 2,
+        360: {
+          slidesPerView: 2.2,
+        },
+        460: {
+          slidesPerView: 2.5,
         },
         640: {
-          slidesPerView: 3,
+          slidesPerView: 3.2,
+        },
+        800: {
+          slidesPerView: 4.2,
         },
         1024: {
-          slidesPerView: 4,
+          slidesPerView: 5.2,
         },
         1280: {
-          slidesPerView: 5,
+          slidesPerView: 6.2,
         },
       }}
     >
