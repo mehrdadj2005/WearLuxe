@@ -1,12 +1,12 @@
 import { categories } from "@/config/category";
 import { Email, Instagram, Telegram } from "@mui/icons-material";
-import { Box, Grid, IconButton, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Box, Container, Grid, IconButton, List, ListItem, ListItemText, Typography } from "@mui/material";
 import Link from "next/link";
 
 function Footer() {
     return (
-        <Box component="footer" sx={{ bgcolor: "primary.main", p: 4 }}>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-primary-50">
+        <Box component="footer" sx={{ bgcolor: "primary.main", py: 4 }}>
+            <Container className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-primary-50">
                 <div>
                     <Typography variant="h6" sx={{ border: "2px solid AppWorkspace", borderRadius: 2, width: "fit-content", padding: 7 }}>اینماد</Typography>
                 </div>
@@ -67,7 +67,7 @@ function Footer() {
                         </ListItem>
                     </List>
                 </div>
-            </div>
+            </Container>
         </Box >
     );
 }
