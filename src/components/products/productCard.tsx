@@ -1,19 +1,34 @@
+"use client";
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 interface ProductData {
-  url: string;
-  alt: string;
-  title: string;
+  alt?: "test";
+  id: string;
+  slug?: string;
+  name: string;
   price: number;
-  discountePercentage: number;
+  colors: string[];
+  sizes: string[];
+  images: string[];
+  rating: number;
+  description?: string;
+  items?: string[];
+  discountePercentage?: number;
   discountedPrice: number;
 }
 
 export default function ProductCard({
-  url,
+  id,
+  slug,
+  rating,
+  description,
+  items,
+  colors,
+  sizes,
+  name,
   alt,
-  title,
   price,
+  images,
   discountePercentage,
   discountedPrice,
 }: ProductData) {
@@ -23,9 +38,9 @@ export default function ProductCard({
     <Card className="max-w-56 h-full flex flex-col overflow-hidden cursor-pointer select-none !content-stretch">
       <CardMedia
         component="img"
-        image={url}
+        image={images[0]}
         alt={alt}
-        className="w-full h-[224px] object-cover border-b border-neutral-200 rounded-t-2xl"
+        className="w-full h-[224px] object-cover border-b border-neutral-200"
       />
 
       <CardContent className="flex flex-col justify-between h-full ">
@@ -33,7 +48,7 @@ export default function ProductCard({
           variant="body2"
           className="text-neutral-800 text-xs line-clamp-2"
         >
-          {title}
+          {name}
         </Typography>
 
         <Box className="flex justify-between items-end min-h-12">
