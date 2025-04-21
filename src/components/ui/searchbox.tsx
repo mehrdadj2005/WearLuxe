@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowBack, Search } from "@mui/icons-material";
 import { Input, InputAdornment } from "@mui/material";
+import { blue } from "@mui/material/colors";
 
 /**
  * Represents a search box component that allows users to input search queries.
@@ -60,7 +61,7 @@ function Searchbox() {
             onChange={(e) => setSearch(e.target.value)}
             startAdornment={
                 <InputAdornment position="end">
-                    <Search />
+                    <Search sx={{ color: '#fff' }} />
                 </InputAdornment>
             }
             endAdornment={
@@ -69,6 +70,7 @@ function Searchbox() {
                         <ArrowBack
                             className="cursor-pointer"
                             onClick={handleNavigation}
+                            sx={{ color: '#fff' }}
                         />
                     </InputAdornment>
                 ) : null
@@ -79,6 +81,7 @@ function Searchbox() {
                 borderBottom: "none",
                 borderRadius: 1,
                 padding: 1,
+                color: "#fff"
             }}
         />
     );

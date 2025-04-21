@@ -32,7 +32,7 @@ function HeroSection() {
               alt="لباس مردانه"
               width={500}
               height={500}
-              className="w-full bg-cover h-[300px] md:h-[480px]"
+              className="w-full h-[300px] md:h-[400px] lg:h-[480px]"
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -41,7 +41,7 @@ function HeroSection() {
               alt="لباس مردانه"
               width={500}
               height={500}
-              className="w-full bg-cover h-[300px] md:h-[480px]"
+              className="w-full h-[300px] md:h-[400px] lg:h-[480px]"
             />
           </SwiperSlide>
           <SwiperSlide>
@@ -50,7 +50,7 @@ function HeroSection() {
               alt="لباس مردانه"
               width={500}
               height={500}
-              className="w-full bg-cover h-[300px] md:h-[480px]"
+              className="w-full h-[300px] md:h-[400px] lg:h-[480px]"
             />
           </SwiperSlide>
         </Swiper>
@@ -65,7 +65,7 @@ function HeroSection() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className="mySwiper !m-0 rounded-2xl"
+            className="mySwiper !m-0 rounded-2xl overflow-hidden"
           >
             <SwiperSlide>
               <Image
@@ -73,7 +73,7 @@ function HeroSection() {
                 alt="لباس مردانه"
                 width={500}
                 height={500}
-                className="w-full bg-cover md:h-[220px]"
+                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -82,7 +82,7 @@ function HeroSection() {
                 alt="لباس مردانه"
                 width={500}
                 height={500}
-                className="w-full bg-cover md:h-[220px]"
+                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
               />
             </SwiperSlide>
           </Swiper>
@@ -96,7 +96,7 @@ function HeroSection() {
               disableOnInteraction: false,
             }}
             modules={[Autoplay]}
-            className="mySwiper !m-0 rounded-2xl"
+            className="mySwiper !m-0 rounded-2xl overflow-hidden"
           >
             <SwiperSlide>
               <Image
@@ -104,7 +104,7 @@ function HeroSection() {
                 alt="لباس مردانه"
                 width={500}
                 height={500}
-                className="w-full bg-cover md:h-[220px]"
+                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -113,7 +113,7 @@ function HeroSection() {
                 alt="لباس مردانه"
                 width={500}
                 height={500}
-                className="w-full bg-cover md:h-[220px]"
+                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
               />
             </SwiperSlide>
           </Swiper>

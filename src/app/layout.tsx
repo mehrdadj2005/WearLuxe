@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Header from "@/components/header";
 import theme from "@/components/them";
 import { ThemeProvider } from "@mui/material";
@@ -17,6 +18,7 @@ export default function RootLayout({
           <ThemeProvider theme={theme}>
             <Header />
             {children}
+            <Footer />
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
