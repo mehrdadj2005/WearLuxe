@@ -1,30 +1,30 @@
-"use client"
+"use client";
 
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { Container, Slide, useScrollTrigger } from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import Searchbox from './ui/searchbox';
-import { KeyboardArrowLeft, Person2Outlined } from '@mui/icons-material';
-import Nav from './ui/nav';
+import { KeyboardArrowLeft, Person2Outlined } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import { Container, Slide, useScrollTrigger } from "@mui/material";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import Divider from "@mui/material/Divider";
+import Drawer from "@mui/material/Drawer";
+import IconButton from "@mui/material/IconButton";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import * as React from "react";
+import Nav from "./ui/nav";
+import Searchbox from "./ui/searchbox";
 
 interface Props {
-    /**
-     * Optional window reference for the scroll trigger.
-     */
-    window?: () => Window;
-    children?: React.ReactElement<unknown>;
+  /**
+   * Optional window reference for the scroll trigger.
+   */
+  window?: () => Window;
+  children?: React.ReactElement<unknown>;
 }
 
-/** 
+/**
  * The width of the mobile drawer.
  */
 const drawerWidth = 240;
@@ -36,16 +36,16 @@ const drawerWidth = 240;
  * @returns A Slide component that shows or hides its children based on scroll.
  */
 function HideOnScroll(props: Props) {
-    const { children, window } = props;
-    const trigger = useScrollTrigger({
-        target: window ? window() : undefined,
-    });
+  const { children, window } = props;
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
 
-    return (
-        <Slide appear={false} direction="down" in={!trigger}>
-            {children ?? <div />}
-        </Slide>
-    );
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children ?? <div />}
+    </Slide>
+  );
 }
 
 /**
@@ -56,111 +56,126 @@ function HideOnScroll(props: Props) {
  * @returns The AppBar component with responsive navigation.
  */
 function Header(props: Props) {
-    const { window } = props;
-    const [mobileOpen, setMobileOpen] = React.useState(false);
+  const { window } = props;
+  const [mobileOpen, setMobileOpen] = React.useState(false);
 
-    // Toggle the mobile drawer open state.
-    const handleDrawerToggle = () => {
-        setMobileOpen((prevState) => !prevState);
-    };
+  // Toggle the mobile drawer open state.
+  const handleDrawerToggle = () => {
+    setMobileOpen((prevState) => !prevState);
+  };
 
-    // Content of the mobile drawer.
-    const drawer = (
-        <div onClick={handleDrawerToggle} className="text-center">
-            <Typography variant="h6" sx={{ my: 2 }}>
+  // Content of the mobile drawer.
+  const drawer = (
+    <div onClick={handleDrawerToggle} className="text-center">
+      <Typography variant="h6" sx={{ my: 2 }}>
+        LOGO
+      </Typography>
+      <Divider />
+      <Nav type="vertical" />
+    </div>
+  );
+
+  const container =
+    window !== undefined ? () => window().document.body : undefined;
+
+  return (
+    <Box sx={{ display: "flex" }}>
+      <CssBaseline />
+      <HideOnScroll {...props}>
+        <AppBar component="header" className="!static">
+          <Container>
+            <Toolbar className="flex gap-2 justify-between items-center !p-0">
+              <Typography
+                variant="h6"
+                sx={{ display: { xs: "none", sm: "block" } }}
+              >
                 LOGO
-            </Typography>
-            <Divider />
-            <Nav type="vertical" />
-        </div>
-    );
-
-    const container = window !== undefined ? () => window().document.body : undefined;
-
-    return (
-        <Box sx={{ display: "flex" }}>
-            <CssBaseline />
-            <HideOnScroll {...props}>
-                <AppBar component="header" className="!static">
-                    <Container>
-                        <Toolbar className="flex gap-2 justify-between items-center !p-0">
-                            <Typography
-                                variant="h6"
-                                sx={{ display: { xs: 'none', sm: 'block' } }}
-                            >
-                                LOGO
-                            </Typography>
-                            <IconButton
-                                color="inherit"
-                                aria-label="open drawer"
-                                edge="start"
-                                onClick={handleDrawerToggle}
-                                sx={{ mr: 2, display: { sm: 'none' } }}
-                            >
-                                <MenuIcon />
-                            </IconButton>
-                            <Box sx={{ display: { xs: "none", sm: "block" }, maxWidth: "60%", width: "50%" }}>
-                                <Searchbox />
-                            </Box>
-                            <div>
-                                <Button
-                                    variant="outlined"
-                                    color="inherit"
-                                    startIcon={<Person2Outlined />}
-                                    endIcon={<KeyboardArrowLeft />}
-                                    size="medium"
-                                    sx={{ display: { xs: 'none', sm: 'flex' } }}
-                                    className="flex gap-2"
-                                >
-                                    وارد شوید
-                                </Button>
-                                <Typography
-                                    variant="h6"
-                                    sx={{ display: { xs: 'block', sm: 'none' } }}
-                                >
-                                    LOGO
-                                </Typography>
-                            </div>
-                        </Toolbar>
-
-                        <Box>
-                            <Box sx={{ display: { xs: "none", sm: "block" } }}>
-                                <Nav />
-                            </Box>
-                            <Button
-                                variant="outlined"
-                                color="inherit"
-                                startIcon={<Person2Outlined />}
-                                endIcon={<KeyboardArrowLeft />}
-                                size="medium"
-                                sx={{ display: { xs: 'flex', sm: 'none' }, marginBottom: 1, width: "100%", gap: 1 }}
-                            >
-                                وارد شوید
-                            </Button>
-                        </Box>
-                    </Container>
-                </AppBar>
-            </HideOnScroll>
-            <nav>
-                <Drawer
-                    container={container}
-                    variant="temporary"
-                    anchor="right"
-                    open={mobileOpen}
-                    onClose={handleDrawerToggle}
-                    ModalProps={{
-                        keepMounted: true, // Better mobile performance.
-                    }}
-                    sx={{
-                        display: { xs: 'block', sm: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-                    }}
+              </Typography>
+              <IconButton
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: "none" } }}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Box
+                sx={{
+                  display: { xs: "none", sm: "block" },
+                  maxWidth: "60%",
+                  width: "50%",
+                }}
+              >
+                <Searchbox />
+              </Box>
+              <div>
+                <Button
+                  variant="outlined"
+                  color="inherit"
+                  startIcon={<Person2Outlined />}
+                  endIcon={<KeyboardArrowLeft />}
+                  size="medium"
+                  sx={{ display: { xs: "none", sm: "flex" } }}
+                  className="flex gap-2"
                 >
-                    {drawer}
-                </Drawer>
-            </nav>
-        </Box>
-    );
+                  وارد شوید
+                </Button>
+                <Typography
+                  variant="h6"
+                  sx={{ display: { xs: "block", sm: "none" } }}
+                >
+                  LOGO
+                </Typography>
+              </div>
+            </Toolbar>
+
+            <Box>
+              <Box sx={{ display: { xs: "none", sm: "block" } }}>
+                <Nav />
+              </Box>
+              <Button
+                variant="outlined"
+                color="inherit"
+                startIcon={<Person2Outlined />}
+                endIcon={<KeyboardArrowLeft />}
+                size="medium"
+                sx={{
+                  display: { xs: "flex", sm: "none" },
+                  marginBottom: 1,
+                  width: "100%",
+                  gap: 1,
+                }}
+              >
+                وارد شوید
+              </Button>
+            </Box>
+          </Container>
+        </AppBar>
+      </HideOnScroll>
+      <nav>
+        <Drawer
+          container={container}
+          variant="temporary"
+          anchor="right"
+          open={mobileOpen}
+          onClose={handleDrawerToggle}
+          ModalProps={{
+            keepMounted: true, // Better mobile performance.
+          }}
+          sx={{
+            display: { xs: "block", sm: "none" },
+            "& .MuiDrawer-paper": {
+              boxSizing: "border-box",
+              width: drawerWidth,
+            },
+          }}
+        >
+          {drawer}
+        </Drawer>
+      </nav>
+    </Box>
+  );
 }
 
-export default Header
+export default Header;
