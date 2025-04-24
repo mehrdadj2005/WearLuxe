@@ -69,7 +69,7 @@ function Footer() {
             {categories.map((item) => (
               <ListItem key={item.id} disablePadding>
                 <Link href={`/products/category/${item.slug}`}>
-                  <ListItemText primary={item.name} />
+                  <ListItemText primary={item.title} />
                 </Link>
               </ListItem>
             ))}
