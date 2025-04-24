@@ -1,9 +1,10 @@
+import Container from "@/components/container";
 import HeroSection from "@/components/layout/hero";
 import ProductSlider from "@/components/products/productSlider";
 import { catsCategory } from "@/config/catsCategory";
 import { setsCategory } from "@/config/setsCategory";
 import { shirtsCategory } from "@/config/shirtsCategory";
-import { Box, CardMedia, Container } from "@mui/material";
+import { Box, CardMedia } from "@mui/material";
 
 export default function HomePage() {
   return (

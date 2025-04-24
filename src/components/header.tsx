@@ -2,7 +2,7 @@
 
 import { KeyboardArrowLeft, Person2Outlined } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Container, Slide, useScrollTrigger } from "@mui/material";
+import { Slide, useScrollTrigger } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -13,6 +13,7 @@ import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import * as React from "react";
+import Container from "./container";
 import Nav from "./ui/nav";
 import Searchbox from "./ui/searchbox";
 
