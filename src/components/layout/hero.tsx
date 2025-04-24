@@ -1,6 +1,5 @@
 "use client";
 
-import { Container } from "@mui/material";
 import Image from "next/image";
 import "swiper/css";
 import { Autoplay } from "swiper/modules";
@@ -12,6 +11,7 @@ import hero04 from "../../../public/images/hero04.jpg";
 import hero05 from "../../../public/images/hero05.jpg";
 import hero06 from "../../../public/images/hero06.jpg";
 import hero07 from "../../../public/images/hero07.jpg";
+import Container from "../container";
 
 function HeroSection() {
   return (

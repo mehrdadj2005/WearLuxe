@@ -1,10 +1,11 @@
 "use client";
 
-import { Box, Button, Container, Typography } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Container from "../container";
 import ProductCard from "./productCard";
 
 interface Product {
@@ -27,7 +28,6 @@ interface ProductSliderProps {
 }
 
 export default function ProductSlider({ data, className }: ProductSliderProps) {
-  console.log(data);
   return (
     <Container>
       <Box className="flex justify-between items-center">
