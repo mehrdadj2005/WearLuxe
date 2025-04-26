@@ -35,7 +35,7 @@ export default function ProductCard({
   const discountValid = discountedPrice > 0;
 
   return (
-    <Card className="max-w-56 h-full flex flex-col overflow-hidden cursor-pointer select-none !content-stretch">
+    <Card className="w-full h-full !max-w-[270px] flex flex-col overflow-hidden cursor-pointer select-none !content-stretch">
       <CardMedia
         component="img"
         image={images[0]}
@@ -43,15 +43,15 @@ export default function ProductCard({
         className="w-full h-[224px] object-cover border-b border-neutral-200"
       />
 
-      <CardContent className="flex flex-col justify-between h-full ">
+      <CardContent className="flex flex-col justify-between h-fit !pb-2">
         <Typography
           variant="body2"
-          className="text-neutral-800 text-xs line-clamp-2"
+          className="text-neutral-800 text-xs line-clamp-2 sm:!pb-10"
         >
           {name}
         </Typography>
 
-        <Box className="flex justify-between items-end min-h-12">
+        <Box className="flex justify-between items-end">
           <Box className="flex flex-col justify-end h-11">
             {discountValid && (
               <Typography
@@ -73,20 +73,20 @@ export default function ProductCard({
                   {discountedPrice.toLocaleString()}
                   <Typography
                     variant="overline"
-                    className="inline-block md:hidden"
+                    className="inline-block md:hidden h-6"
                   >
                     ت
                   </Typography>
                   <Typography
                     variant="overline"
-                    className="hidden md:inline-block"
+                    className="hidden md:inline-block h-6"
                   >
                     تومان
                   </Typography>
                 </Box>
               </>
             ) : (
-              <Box className="text-xs font-semibold">
+              <Box className="text-xs font-semibold h-6 flex items-end">
                 {price.toLocaleString()} تومان
               </Box>
             )}
