@@ -44,7 +44,6 @@
   --font-iranSans-thin: "iran_sans_thin";
 
   /* custom size from material ui */
-  --breakpoint-xs: 0px;
   --breakpoint-sm: 600px;
   --breakpoint-md: 900px;
   --breakpoint-lg: 1200px;
