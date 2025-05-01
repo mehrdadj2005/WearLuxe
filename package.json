@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "json-server": "json-server --watch src/config/data/db.json --port 4000"
+    "json-server": "json-server --watch src/data/db.json --port 4000"
   },
   "dependencies": {
     "@emotion/cache": "^11.14.0",
