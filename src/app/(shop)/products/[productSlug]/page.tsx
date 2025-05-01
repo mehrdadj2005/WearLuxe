@@ -1,22 +1,27 @@
 import Container from "@/components/container";
 import SizeToggleButton from "@/components/ui/button/sizeToggleButton";
-import { getAllProducts, categories } from "@/config/category";
-import { Box, Divider, Grid, List, ListItem, ToggleButton, ToggleButtonGroup, Typography } from "@mui/material";
+import { getProduct } from "@/services/getProduct";
+import { Box, Divider, Grid, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
+import ProductError from "./error";
 
 interface ICategory {
     params: Promise<{ productSlug: string }>;
 }
 
-export async function generateStaticParams() {
-    return categories.map((category) => ({
-        productSlug: category.id,
-    }));
-}
+// export async function generateStaticParams() {
+//     return categories.map((category) => ({
+//         productSlug: category.id,
+//     }));
+// }
 
 async function ProductId({ params }: ICategory) {
     const url = await params;
-    const product = getAllProducts().find(p => p.id === url.productSlug)
+    const { data, error } = await getProduct(`http://localhost:4000/products/${url.productSlug}`)
+
+    if (error) return <ProductError error={error} />
+    if (!data) return <ProductError error={error} />
+
 
     return (
         <Container>
@@ -24,8 +29,8 @@ async function ProductId({ params }: ICategory) {
             >
                 <Grid size={{ xs: 12, md: 4 }}>
                     <Image
-                        src={product?.images[0] ?? ""}
-                        alt={product?.name ?? ""}
+                        src={data?.images[0] ?? ""}
+                        alt={data?.name ?? ""}
                         width={500}
                         height={500}
                         className="w-full"
@@ -33,16 +38,16 @@ async function ProductId({ params }: ICategory) {
                 </Grid>
                 <Grid size={{ xs: 12, md: 8 }}>
                     <Box>
-                        <Typography variant="h3">{product?.name}</Typography>
+                        <Typography variant="h3">{data?.name}</Typography>
                         <Box >
-                            <Typography sx={{ backgroundColor: "var(--color-primary-200)", width: "fit-content", paddingX: 2, paddingY: .5, borderRadius: 50, marginTop: 2 }} variant="h6">{product?.price.toLocaleString()} تومان</Typography>
+                            <Typography sx={{ backgroundColor: "var(--color-primary-200)", width: "fit-content", paddingX: 2, paddingY: .5, borderRadius: 50, marginTop: 2 }} variant="h6">{data?.price.toLocaleString()} تومان</Typography>
                         </Box>
                     </Box>
                     <List>
-                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>سایز: {product?.sizes.join(", ")}</ListItem>
-                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>رنگ: {product?.colors.join(", ")}</ListItem>
-                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>نوع: باید به دیتا ها اضافه شود</ListItem>
-                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>امتیاز: {product?.rating}/5</ListItem>
+                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>سایز: {data?.sizes.join(", ")}</ListItem>
+                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>رنگ: {data?.colors.join(", ")}</ListItem>
+                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>موجودی: {data?.stock ? "موجود" : "ناموجود"}</ListItem>
+                        <ListItem sx={{ paddingLeft: 0, paddingRight: 0 }}>توضیحات: {data?.description}</ListItem>
                     </List>
                     <Divider />
                     <Box sx={{ marginTop: 1 }}>
