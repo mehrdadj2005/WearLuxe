@@ -28,6 +28,7 @@ export default function SizeToggleButton() {
                 exclusive
                 aria-label="Platform"
                 onChange={handleChange}
+                sx={{ direction: "ltr" }}
             >
                 <ToggleButton value="small" aria-label="list">
                     S
