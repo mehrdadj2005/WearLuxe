@@ -7,6 +7,7 @@ import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "../container";
 import ProductCard from "./productCard";
+import Link from "next/link";
 
 interface Product {
   id: string;
@@ -70,7 +71,9 @@ export default function ProductSlider({ data, className }: ProductSliderProps) {
       >
         {data.products.map((item) => (
           <SwiperSlide key={item.id}>
-            <ProductCard {...item} />
+            <Link href={`products/${item.id}`}>
+              <ProductCard {...item} />
+            </Link>
           </SwiperSlide>
         ))}
       </Swiper>

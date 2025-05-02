@@ -3,9 +3,9 @@ import { CircularProgress, Typography } from "@mui/material";
 
 function Loading() {
   return (
-    <Container className="flex justify-center items-center">
+    <Container className="flex flex-col gap-1 justify-center items-center h-dvh">
       <CircularProgress />
-      <Typography>Loading...</Typography>
+      <Typography>صبر کنید...</Typography>
     </Container>
   );
 }

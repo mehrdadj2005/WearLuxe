@@ -80,10 +80,10 @@ function Header(props: Props) {
     window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex", marginBottom: { xs: 10, sm: 15 } }}>
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar component="header" className="!static">
+        <AppBar component="header">
           <Container>
             <Toolbar className="flex gap-2 justify-between items-center !p-0">
               <Typography

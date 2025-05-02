@@ -2,7 +2,9 @@
 
 import Image from "next/image";
 import "swiper/css";
-import { Autoplay } from "swiper/modules";
+import 'swiper/css/navigation';
+import 'swiper/css/navigation';
+import { Autoplay, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import hero01 from "../../../public/images/hero01.webp";
 import hero02 from "../../../public/images/hero02.jpg";
@@ -23,7 +25,8 @@ function HeroSection() {
             delay: 3500,
             disableOnInteraction: false,
           }}
-          modules={[Autoplay]}
+          navigation={true}
+          modules={[Autoplay, Navigation]}
           className="mySwiper !m-0 rounded-2xl"
         >
           <SwiperSlide>
