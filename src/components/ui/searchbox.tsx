@@ -1,10 +1,9 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react";
-import { useRouter, useSearchParams } from "next/navigation";
 import { ArrowBack, Search } from "@mui/icons-material";
 import { Input, InputAdornment } from "@mui/material";
-import { blue } from "@mui/material/colors";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useEffect, useState } from "react";
 
 /**
  * Represents a search box component that allows users to input search queries.
@@ -22,69 +21,69 @@ import { blue } from "@mui/material/colors";
  * <Searchbox />
  */
 function Searchbox() {
-    const [search, setSearch] = useState("");
-    const searchParams = useSearchParams();
-    const router = useRouter()
+  const [search, setSearch] = useState("");
+  const searchParams = useSearchParams();
+  const router = useRouter();
 
-    useEffect(() => {
-        function handleSearch(e: KeyboardEvent) {
-            if (e.key === "Enter")
-                if (search.length > 2) {
-                    const currentUrl = new URLSearchParams(searchParams.toString());
-                    currentUrl.set("title", search)
-                    router.push(`/products?${currentUrl.toString()}`);
-                    setSearch('')
-                }
+  useEffect(() => {
+    function handleSearch(e: KeyboardEvent) {
+      if (e.key === "Enter")
+        if (search.length > 2) {
+          const currentUrl = new URLSearchParams(searchParams.toString());
+          currentUrl.set("title", search);
+          router.push(`/products?${currentUrl.toString()}`);
+          setSearch("");
         }
+    }
 
-        window.addEventListener("keydown", handleSearch);
+    window.addEventListener("keydown", handleSearch);
 
-        return () => {
-            window.removeEventListener("keydown", handleSearch);
-        };
-    }, [search, searchParams])
-
-    const handleNavigation = () => {
-        if (search) {
-            const currentUrl = new URLSearchParams(searchParams.toString());
-            currentUrl.set("title", search)
-            router.push(`/products?${currentUrl.toString()}`);
-            setSearch('')
-        }
+    return () => {
+      window.removeEventListener("keydown", handleSearch);
     };
+  }, [search, searchParams]);
 
-    return (
-        <Input
-            value={search}
-            fullWidth
-            placeholder="جسنجو کنید..."
-            onChange={(e) => setSearch(e.target.value)}
-            startAdornment={
-                <InputAdornment position="end">
-                    <Search sx={{ color: '#fff' }} />
-                </InputAdornment>
-            }
-            endAdornment={
-                search.length > 2 ? (
-                    <InputAdornment position="end">
-                        <ArrowBack
-                            className="cursor-pointer"
-                            onClick={handleNavigation}
-                            sx={{ color: '#fff' }}
-                        />
-                    </InputAdornment>
-                ) : null
-            }
-            sx={{
-                border: "1px solid",
-                borderColor: "grey.400",
-                borderBottom: "none",
-                borderRadius: 1,
-                padding: 1,
-                color: "#fff"
-            }}
-        />
-    );
+  const handleNavigation = () => {
+    if (search) {
+      const currentUrl = new URLSearchParams(searchParams.toString());
+      currentUrl.set("title", search);
+      router.push(`/products?${currentUrl.toString()}`);
+      setSearch("");
+    }
+  };
+
+  return (
+    <Input
+      value={search}
+      fullWidth
+      placeholder="جسنجو کنید..."
+      onChange={(e) => setSearch(e.target.value)}
+      startAdornment={
+        <InputAdornment position="end">
+          <Search sx={{ color: "#fff" }} />
+        </InputAdornment>
+      }
+      endAdornment={
+        search.length > 2 ? (
+          <InputAdornment position="end">
+            <ArrowBack
+              className="cursor-pointer"
+              onClick={handleNavigation}
+              sx={{ color: "#fff" }}
+            />
+          </InputAdornment>
+        ) : null
+      }
+      sx={{
+        border: "1px solid",
+        borderColor: "grey.400",
+        borderBottom: "none",
+        borderRadius: 1,
+        padding: 1,
+        color: "#fff",
+      }}
+    />
+  );
 }
 
 export default Searchbox;
