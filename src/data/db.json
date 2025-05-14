@@ -23,12 +23,11 @@
   ],
   "products": [
     {
-      "id": "101",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320001,
       "discountedPercentage": 0,
       "discount": 0,
       "discountedPrice": 320000,
@@ -37,15 +36,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 1
     },
     {
-      "id": "102",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320002,
       "discountedPercentage": 5,
       "discount": 16000,
       "discountedPrice": 304000,
@@ -54,15 +53,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 2
     },
     {
-      "id": "103",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320003,
       "discountedPercentage": 0,
       "discount": 0,
       "discountedPrice": 320000,
@@ -71,15 +70,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 3
     },
     {
-      "id": "104",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320004,
       "discountedPercentage": 0,
       "discount": 0,
       "discountedPrice": 320000,
@@ -88,15 +87,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 4
     },
     {
-      "id": "105",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320005,
       "discountedPercentage": 20,
       "discount": 64000,
       "discountedPrice": 256000,
@@ -105,15 +104,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 5
     },
     {
-      "id": "106",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320006,
       "discountedPercentage": 7,
       "discount": 22400,
       "discountedPrice": 297600,
@@ -122,15 +121,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 6
     },
     {
-      "id": "107",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320007,
       "discountedPercentage": 15,
       "discount": 48000,
       "discountedPrice": 272000,
@@ -139,15 +138,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 7
     },
     {
-      "id": "108",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320008,
       "discountedPercentage": 9,
       "discount": 28800,
       "discountedPrice": 291200,
@@ -156,15 +155,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 8
     },
     {
-      "id": "109",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320009,
       "discountedPercentage": 3,
       "discount": 9600,
       "discountedPrice": 310400,
@@ -173,15 +172,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 9
     },
     {
-      "id": "110",
       "categoryId": "1",
       "categoryName": "شلوار",
       "slug": "jeans-slim-fit",
       "name": "شلوار جین اسلیم فیت",
-      "price": 320000,
+      "price": 320010,
       "discountedPercentage": 17,
       "discount": 54400,
       "discountedPrice": 265600,
@@ -190,15 +189,15 @@
       "sizes": ["S", "M", "L", "XL"],
       "images": ["/images/hero06.jpg", "/images/hero06.jpg"],
       "rating": 4.8,
-      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت"
+      "description": "شلوار جین اسلیم فیت با الیاف باکیفیت",
+      "sales": 10
     },
     {
-      "id": "201",
       "categoryId": "2",
       "categoryName": "پیراهن",
       "slug": "formal-white-shirt",
       "name": "پیراهن رسمی سفید",
-      "price": 320000,
+      "price": 320011,
       "discountedPercentage": 8,
       "discount": 25600,
       "discountedPrice": 294400,
@@ -206,15 +205,15 @@
       "colors": ["سفید"],
       "sizes": ["36", "38", "40", "42"],
       "images": ["/images/white-shirt-4.jpg", "/images/white-shirt-5.jpg"],
-      "rating": 4.7
+      "rating": 4.7,
+      "sales": 11
     },
     {
-      "id": "301",
       "categoryId": "3",
       "categoryName": "کلاه",
       "slug": "baseball-cap",
       "name": "کلاه بیسبال",
-      "price": 320000,
+      "price": 320012,
       "discountedPercentage": 4,
       "discount": 12800,
       "discountedPrice": 307200,
@@ -222,15 +221,15 @@
       "colors": ["مشکی", "سفید", "آبی"],
       "sizes": ["تک سایز"],
       "images": ["/images/cap-5.jpg", "/images/cap-4.jpg"],
-      "rating": 4.2
+      "rating": 4.2,
+      "sales": 12
     },
     {
-      "id": "401",
       "categoryId": "4",
       "categoryName": "ست",
       "slug": "summer-set",
       "name": "ست تابستانی",
-      "price": 320000,
+      "price": 320013,
       "discountedPercentage": 10,
       "discount": 32000,
       "discountedPrice": 288000,
@@ -239,7 +238,8 @@
       "colors": ["آبی", "سفید"],
       "sizes": ["M", "L"],
       "images": ["/images/summer-set-6.jpg"],
-      "rating": 4.6
+      "rating": 4.6,
+      "sales": 13
     }
   ],
   "users": [
