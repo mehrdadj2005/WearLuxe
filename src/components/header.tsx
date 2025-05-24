@@ -12,13 +12,13 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 import Container from "./container";
 import Nav from "./ui/nav";
 import Searchbox from "./ui/searchbox";
 import { useSelector } from "react-redux";
 import { getTotalCartQuantity } from "@/app/cart/cartSlice";
 import Link from "next/link";
+import { useState } from "react";
 
 interface Props {
   /**
@@ -42,7 +42,7 @@ const drawerWidth = 240;
 function HideOnScroll(props: Props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
+    target: typeof window !== "undefined" ? window() : undefined,
   });
 
   return (
@@ -60,9 +60,9 @@ function HideOnScroll(props: Props) {
  * @returns The AppBar component with responsive navigation.
  */
 function Header(props: Props) {
-  const totalCartQuantity = useSelector(getTotalCartQuantity)
+  const totalCartQuantity = useSelector(getTotalCartQuantity) || 0
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   // Toggle the mobile drawer open state.
   const handleDrawerToggle = () => {
