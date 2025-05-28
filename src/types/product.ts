@@ -6,12 +6,26 @@ export interface IProduct {
   name: string;
   price: number;
   discountedPercentage: number;
-  discount: number;
   discountedPrice: number;
   stock: boolean;
-  colors: string[];
-  sizes: string[];
   images: string[];
   rating: number;
   description: string;
+  color: string;
+  colors: string[];
+  material: string;
+  publishTime: string;
+  publishTimeSort: string;
+  sales: number;
+  size: string;
+  sizes: {
+    [key: string]: {
+      dimensions: {
+        height: number;
+        width: number;
+      };
+      stock: boolean;
+    };
+  };
+  type: string;
 }
