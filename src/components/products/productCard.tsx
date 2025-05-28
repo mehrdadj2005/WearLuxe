@@ -3,34 +3,27 @@ import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 interface ProductData {
   alt?: "test";
-  id: string;
+  id?: string;
   slug?: string;
-  name: string;
-  price: number;
-  colors: string[];
-  sizes: string[];
-  images: string[];
-  rating: number;
+  name?: string;
+  price?: number;
+  colors?: string[];
+  sizes?: string[];
+  images?: string[];
+  rating?: number;
   description?: string;
   items?: string[];
-  discountePercentage?: number;
-  discountedPrice: number;
+  discountedPercentage?: number;
+  discountedPrice?: number;
 }
 
 export default function ProductCard({
-  id,
-  slug,
-  rating,
-  description,
-  items,
-  colors,
-  sizes,
   name,
   alt,
-  price,
-  images,
-  discountePercentage,
-  discountedPrice,
+  price = 0,
+  images = [],
+  discountedPercentage,
+  discountedPrice = 0,
 }: ProductData) {
   const discountValid = discountedPrice > 0;
 
@@ -58,7 +51,7 @@ export default function ProductCard({
                 variant="inherit"
                 className="bg-primary-400 text-neutral-200 text-[12px] px-2 py-0.5 rounded w-fit"
               >
-                {discountePercentage}%
+                {discountedPercentage}%
               </Typography>
             )}
           </Box>
@@ -70,7 +63,7 @@ export default function ProductCard({
                   {price.toLocaleString()}
                 </Box>
                 <Box className="text-xs font-semibold">
-                  {discountedPrice.toLocaleString()}
+                  {discountedPrice.toLocaleString()}{" "}
                   <Typography
                     variant="overline"
                     className="inline-block md:hidden h-6"
