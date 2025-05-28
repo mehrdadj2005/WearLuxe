@@ -6,7 +6,18 @@ import {
   SwitchProps,
 } from "@mui/material";
 
-export default function SwitchButton({ label }: { label: string }) {
+export default function SwitchButton({
+  label,
+  checked,
+  onChange,
+}: {
+  label?: string;
+  checked?: boolean;
+  onChange?: (
+    event: React.ChangeEvent<HTMLInputElement>,
+    checked: boolean
+  ) => void;
+}) {
   const IOSSwitch = styled((props: SwitchProps) => (
     <Switch
       focusVisibleClassName=".Mui-focusVisible"
@@ -63,7 +74,13 @@ export default function SwitchButton({ label }: { label: string }) {
     <FormGroup>
       <FormControlLabel
         dir="ltr"
-        control={<IOSSwitch sx={{ m: 1, font: 12 }} defaultChecked />}
+        control={
+          <IOSSwitch
+            sx={{ m: 1, font: 12 }}
+            checked={checked}
+            onChange={onChange}
+          />
+        }
         label={label}
       />
     </FormGroup>
