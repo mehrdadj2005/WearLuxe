@@ -22,6 +22,8 @@ interface Product {
   items?: string[];
   discountePercentage?: number;
   discountedPrice?: number;
+  numberOfSales: number;
+  publishTime: string;
 }
 interface ProductSliderProps {
   data: Product;
@@ -29,6 +31,22 @@ interface ProductSliderProps {
 }
 
 export default function ProductSlider({ data, className }: ProductSliderProps) {
+  // const sortByDate = () => {
+  //   const [dataCopy, setDataCopy] = useState([...data.products]);
+
+  //   useEffect(() => {
+  //     if (dataCopy.length === 0) return;
+
+  //     const sortedData = [...dataCopy].sort((a, b) => {
+  //       const dateA = a.publishTime.replaceAll("/", "").replaceAll("-", "");
+  //       const dateB = b.publishTime.replaceAll("/", "").replaceAll("-", "");
+  //       return dateB.localeCompare(dateA); // جدیدتر بیاد جلوتر
+  //     });
+
+  //     setDataCopy(sortedData);
+  //   }, [data.products]);
+  // };
+
   return (
     <Container>
       <Box className="flex justify-between items-center">
