@@ -1,57 +1,27 @@
 "use client";
 
+import { IProduct } from "@/types/product";
 import { Box, Button, Typography } from "@mui/material";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "../container";
 import ProductCard from "./productCard";
-import Link from "next/link";
 
-interface Product {
-  id: string;
-  slug: string;
-  title: string;
-  price: number;
-  colors: string[];
-  sizes: string[];
-  images: string[];
-  rating: number;
-  description?: string;
-  items?: string[];
-  discountePercentage?: number;
-  discountedPrice?: number;
-  numberOfSales: number;
-  publishTime: string;
-}
 interface ProductSliderProps {
-  data: Product;
+  data: IProduct[];
   className?: string;
 }
 
 export default function ProductSlider({ data, className }: ProductSliderProps) {
-  // const sortByDate = () => {
-  //   const [dataCopy, setDataCopy] = useState([...data.products]);
-
-  //   useEffect(() => {
-  //     if (dataCopy.length === 0) return;
-
-  //     const sortedData = [...dataCopy].sort((a, b) => {
-  //       const dateA = a.publishTime.replaceAll("/", "").replaceAll("-", "");
-  //       const dateB = b.publishTime.replaceAll("/", "").replaceAll("-", "");
-  //       return dateB.localeCompare(dateA); // جدیدتر بیاد جلوتر
-  //     });
-
-  //     setDataCopy(sortedData);
-  //   }, [data.products]);
-  // };
-
+  console.log(data);
   return (
     <Container>
       <Box className="flex justify-between items-center">
         <Typography variant="h6" className="pr-8 text-neutral-800 pt-4 pb-2">
-          {data.title}
+          {data[0].categoryName}
         </Typography>
 
         <Button
@@ -87,10 +57,10 @@ export default function ProductSlider({ data, className }: ProductSliderProps) {
           },
         }}
       >
-        {data.products.map((item) => (
+        {data.map((item: IProduct) => (
           <SwiperSlide key={item.id}>
             <Link href={`products/${item.id}`}>
-              <ProductCard {...item} />
+              <ProductCard item={item} />
             </Link>
           </SwiperSlide>
         ))}
