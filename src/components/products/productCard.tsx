@@ -2,25 +2,7 @@
 import { IProduct } from "@/types/product";
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
-interface ProductData {
-  alt?: "test";
-  id?: string;
-  slug?: string;
-  name?: string;
-  price?: number;
-  colors?: string[];
-  sizes?: string[];
-  images?: string[];
-  rating?: number;
-  description?: string;
-  items?: string[];
-  discountedPercentage?: number;
-  discountedPrice?: number;
-}
-
-export default function ProductCard({
-  item
-}: { item: IProduct }) {
+export default function ProductCard({ item }: { item: IProduct }) {
   const discountValid = item.discountedPrice > 0;
 
   return (
