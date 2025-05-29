@@ -1,20 +1,11 @@
 import Container from "@/components/container";
-import QuantityButton from "@/components/ui/button/QuantityButton";
-import SizeToggleButton from "@/components/ui/button/sizeToggleButton";
 import { getProduct } from "@/services/getProduct";
-import { ArrowLeft } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Divider,
-  Grid,
-  List,
-  ListItem,
-  Typography,
-} from "@mui/material";
+import { Box, Divider, Grid, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
 import ProductError from "./error";
+import { ArrowLeft } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
+import ProductActionGroup from "./ProductActionGroup";
 
 interface ICategory {
   params: Promise<{ productSlug: string }>;
@@ -213,21 +204,8 @@ async function ProductId({ params }: ICategory) {
           </Box>
 
           <Divider />
-          <Box
-            sx={{
-              marginTop: 1,
-              display: "flex",
-              flexDirection: "column",
-              gap: 1,
-            }}
-          >
-            <QuantityButton />
-            <SizeToggleButton sizes={data.sizes} />
 
-            <Button fullWidth variant="contained" color="primary">
-              افزودن به سبد خرید
-            </Button>
-          </Box>
+          <ProductActionGroup product={data} />
         </Grid>
 
         <Grid size={12}>
