@@ -3,6 +3,7 @@ import ProductDetailsSort from "@/app/(shop)/products/category/[categorySlug]/pr
 import Container from "@/components/container";
 import ProductCard from "@/components/products/productCard";
 import { getProduct } from "@/services/getProduct";
+import { IProduct } from "@/types/product";
 import { Box } from "@mui/material";
 interface ICategoryPageProps {
   searchParams: Promise<{ sort: string }>;
@@ -11,16 +12,18 @@ interface ICategoryPageProps {
 export default async function CategoryPage({
   searchParams,
 }: ICategoryPageProps) {
-  const data = (await searchParams) as Record<string, string>;
+  const url = (await searchParams) as Record<string, string>;
 
   let filters = "";
-  for (const i in data) {
-    filters += `${i}=${data[i]}&`;
+  for (const i in url) {
+    filters += `${i}=${url[i]}&`;
   }
 
-  const products = await getProduct(
+  const { data, error } = await getProduct(
     `http://localhost:4000/products?${filters}`
   );
+
+  console.log(data);
 
   return (
     <Container
@@ -68,7 +71,7 @@ export default async function CategoryPage({
             justifyContent: "flex-start",
           }}
         >
-          {products.data.map((item) => (
+          {(data as IProduct[]).map((item: IProduct) => (
             <Box
               key={item.id}
               sx={{
@@ -82,7 +85,7 @@ export default async function CategoryPage({
                 justifyContent: "center",
               }}
             >
-              <ProductCard {...item} />
+              <ProductCard item={item} />
             </Box>
           ))}
         </Box>
