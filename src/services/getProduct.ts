@@ -17,7 +17,7 @@ export const getProduct = async (
 ): Promise<{ data: IProduct; error: string }> => {
   try {
     // Enable caching with revalidation
-    const res = await fetch(url, { next: { revalidate: 10000 } });
+    const res = await fetch(url, { next: { revalidate: 0 } });
     if (!res.ok)
       throw new Error("خطا در برقراری ارتباط, لطفا دوباره امتحان کنید.");
     const data = await res.json();

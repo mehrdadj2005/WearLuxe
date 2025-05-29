@@ -2,12 +2,13 @@
 
 import { Box, Button, Divider, Paper, Typography } from "@mui/material";
 import Link from "next/link";
-import { getTotalCartPrice } from "./cartSlice";
+import { getTotalCartPrice, getTotalCartQuantity } from "./cartSlice";
 import { useSelector } from "react-redux";
 import { formatPrice } from "@/helper/helper";
 
 function OrderSummary() {
     const totalPrice = useSelector(getTotalCartPrice)
+    const cartItems = useSelector(getTotalCartQuantity)
 
     return (
         <Paper elevation={2} sx={{ p: 3, position: "sticky", top: 20 }}>
@@ -33,11 +34,30 @@ function OrderSummary() {
                 <Typography variant="h6">{formatPrice(totalPrice + 150000)}</Typography>
             </Box>
 
-            <Link href="/cart/checkout">
-                <Button variant="contained" color="primary" fullWidth size="large" sx={{ mt: 2 }}>
+            {cartItems ? (
+                <Link href="/cart/checkout">
+                    <Button
+                        variant="contained"
+                        color="primary"
+                        fullWidth
+                        size="large"
+                        sx={{ mt: 2 }}
+                    >
+                        ادامه فرآیند خرید
+                    </Button>
+                </Link>
+            ) : (
+                <Button
+                    disabled
+                    variant="contained"
+                    color="primary"
+                    fullWidth
+                    size="large"
+                    sx={{ mt: 2 }}
+                >
                     ادامه فرآیند خرید
                 </Button>
-            </Link>
+            )}
         </Paper>
     );
 }

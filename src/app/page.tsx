@@ -11,16 +11,16 @@ export default function HomePage() {
     <>
       <HeroSection />
       <Box className="bg-primary-200 py-4 md:py-8">
-        <ProductSlider className="" data={catsCategory} />
+        <ProductSlider data={catsCategory} />
       </Box>
       <ProductSlider data={setsCategory} />
       <ProductSlider data={shirtsCategory} />
       <Box className="bg-secondary-200 py-4 md:py-8">
-        <ProductSlider className="" data={catsCategory} />
+        <ProductSlider data={catsCategory} />
       </Box>
       <ProductSlider data={setsCategory} />
       <ProductSlider data={shirtsCategory} />
-      <Container className="">
+      <Container>
         <Box className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 px-8 md:px-16 py-4 md:py-8">
           <CardMedia
             component="img"
