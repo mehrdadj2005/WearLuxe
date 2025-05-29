@@ -1,4 +1,5 @@
 "use client";
+import { IProduct } from "@/types/product";
 import { Box, Card, CardContent, CardMedia, Typography } from "@mui/material";
 
 interface ProductData {
@@ -18,21 +19,16 @@ interface ProductData {
 }
 
 export default function ProductCard({
-  name,
-  alt,
-  price = 0,
-  images = [],
-  discountedPercentage,
-  discountedPrice = 0,
-}: ProductData) {
-  const discountValid = discountedPrice > 0;
+  item
+}: { item: IProduct }) {
+  const discountValid = item.discountedPrice > 0;
 
   return (
     <Card className="w-full h-full !max-w-[270px] flex flex-col overflow-hidden cursor-pointer select-none !content-stretch">
       <CardMedia
         component="img"
-        image={images[0]}
-        alt={alt}
+        image={item.images[0]}
+        alt={item.name}
         className="w-full h-[224px] object-cover border-b border-neutral-200"
       />
 
@@ -41,7 +37,7 @@ export default function ProductCard({
           variant="body2"
           className="text-neutral-800 text-xs line-clamp-2 sm:!pb-10"
         >
-          {name}
+          {item.name}
         </Typography>
 
         <Box className="flex justify-between items-end">
@@ -51,7 +47,7 @@ export default function ProductCard({
                 variant="inherit"
                 className="bg-primary-400 text-neutral-200 text-[12px] px-2 py-0.5 rounded w-fit"
               >
-                {discountedPercentage}%
+                {item.discountedPercentage}%
               </Typography>
             )}
           </Box>
@@ -60,10 +56,10 @@ export default function ProductCard({
             {discountValid ? (
               <>
                 <Box className="text-xs line-through text-neutral-400">
-                  {price.toLocaleString()}
+                  {item.price.toLocaleString()}
                 </Box>
                 <Box className="text-xs font-semibold">
-                  {discountedPrice.toLocaleString()}{" "}
+                  {item.discountedPrice.toLocaleString()}{" "}
                   <Typography
                     variant="overline"
                     className="inline-block md:hidden h-6"
@@ -80,7 +76,7 @@ export default function ProductCard({
               </>
             ) : (
               <Box className="text-xs font-semibold h-6 flex items-end">
-                {price.toLocaleString()} تومان
+                {item.price.toLocaleString()} تومان
               </Box>
             )}
           </Box>

@@ -6,6 +6,7 @@ import ProductError from "./error";
 import { ArrowLeft } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
 import ProductActionGroup from "./ProductActionGroup";
+import { IProduct } from "@/types/product";
 
 interface ICategory {
   params: Promise<{ productSlug: string }>;
@@ -19,7 +20,7 @@ interface ICategory {
 
 async function ProductId({ params }: ICategory) {
   const url = await params;
-  const { data, error } = await getProduct(
+  const { data, error } = await getProduct<IProduct>(
     `http://localhost:4000/products/${url.productSlug}`
   );
 
@@ -142,7 +143,7 @@ async function ProductId({ params }: ICategory) {
                 >
                   :
                 </Typography>
-                <Typography>{data?.sizes.join(", ")}</Typography>
+                <Typography>{Object.keys(data?.sizes).join(", ")}</Typography>
               </ListItem>
 
               <ListItem

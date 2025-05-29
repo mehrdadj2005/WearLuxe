@@ -57,7 +57,7 @@ function ProductActionGroup({ product }: { product: IProduct }) {
                     onChange={handleChange}
                     sx={{ direction: "ltr" }}
                 >
-                    {product.sizes.map((size, index) => (
+                    {Object.keys(product.sizes).map((size, index) => (
                         <ToggleButton key={index} value={size}>
                             {size}
                         </ToggleButton>
