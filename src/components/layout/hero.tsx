@@ -4,7 +4,7 @@ import Image from "next/image";
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/navigation';
-import { Autoplay, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import hero01 from "../../../public/images/hero01.webp";
 import hero02 from "../../../public/images/hero02.jpg";
@@ -14,114 +14,103 @@ import hero05 from "../../../public/images/hero05.jpg";
 import hero06 from "../../../public/images/hero06.jpg";
 import hero07 from "../../../public/images/hero07.jpg";
 import Container from "../container";
+import { Box, Grid, Typography } from "@mui/material";
 
 function HeroSection() {
   return (
-    <Container className="grid grid-cols-3 gap-3 md:gap-5 py-10">
-      <div className="col-span-3 md:col-span-2">
-        <Swiper
-          centeredSlides={true}
-          autoplay={{
-            delay: 3500,
-            disableOnInteraction: false,
-          }}
-          navigation={true}
-          modules={[Autoplay, Navigation]}
-          className="mySwiper !m-0 rounded-2xl"
-        >
-          <SwiperSlide>
-            <Image
-              src={hero01}
-              alt="لباس مردانه"
-              width={500}
-              height={500}
-              className="w-full h-[300px] md:h-[400px] lg:h-[480px]"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={hero02}
-              alt="لباس مردانه"
-              width={500}
-              height={500}
-              className="w-full h-[300px] md:h-[400px] lg:h-[480px]"
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src={hero03}
-              alt="لباس مردانه"
-              width={500}
-              height={500}
-              className="w-full h-[300px] md:h-[400px] lg:h-[480px]"
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div>
+    <Container>
+      <Grid container spacing={2} size={12}
+        sx={{
+          paddingY: 5
+        }}>
+        <Grid sx={{ height: { xs: 350, md: 500 } }} size={{ xs: 12, md: 8 }}>
+          <Swiper
+            centeredSlides={true}
+            autoplay={{
+              delay: 7000,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+              enabled: true
+            }}
+            modules={[Pagination, Autoplay]}
+            className="mySwiper"
+            style={{ height: "100%", borderRadius: 3 }}
+          >
+            <SwiperSlide style={{ height: '100%' }}>
+              <Box width={"100%"} height={"100%"} sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: { xs: "center", sm: "flex-end" },
+                background: { xs: "none", sm: 'url("/images/banner-15.jpg")' },
+                backgroundSize: { xs: "none", sm: 'cover' },
+                backgroundPosition: { xs: "none", sm: 'center' },
+                backgroundRepeat: { xs: "none", sm: 'no-repeat' }
+              }}>
+                <Box sx={{ padding: 4, textAlign: "center" }}>
+                  <Typography fontSize={{ xs: 20, md: 24 }}>خوش پوشی شایسته شماست</Typography>
+                  <Typography variant="h6" fontSize={{ xs: 24, md: 32 }}>WEAELUXE</Typography>
+                </Box>
+              </Box>
+            </SwiperSlide>
+            <SwiperSlide style={{ height: '100%' }}>
+              <Box width={"100%"} height={"100%"} sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: { xs: "center", sm: "flex-end" },
+                background: { xs: "none", sm: 'url("/images/banner-25.jpg")' },
+                backgroundSize: { xs: "none", sm: 'cover' },
+                backgroundPosition: { xs: "none", sm: 'center' },
+                backgroundRepeat: { xs: "none", sm: 'no-repeat' }
+              }}>
+                <Box sx={{ padding: 4, textAlign: "center" }}>
+                  <Typography fontSize={{ xs: 20, md: 24 }}>خوش پوشی شایسته شماست</Typography>
+                  <Typography variant="h6" fontSize={{ xs: 24, md: 32 }}>WEAELUXE</Typography>
+                </Box>
+              </Box>
+            </SwiperSlide>
+          </Swiper>
+        </Grid>
 
-      <div className="hidden col-span-1 md:flex flex-col h-full gap-5">
-        <div className="h-full">
-          <Swiper
-            centeredSlides={true}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            className="mySwiper !m-0 rounded-2xl overflow-hidden"
-          >
-            <SwiperSlide>
-              <Image
-                src={hero04}
-                alt="لباس مردانه"
-                width={500}
-                height={500}
-                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src={hero05}
-                alt="لباس مردانه"
-                width={500}
-                height={500}
-                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
-              />
-            </SwiperSlide>
-          </Swiper>
-        </div>
-        <div className="h-full">
-          <Swiper
-            spaceBetween={10}
-            centeredSlides={true}
-            autoplay={{
-              delay: 3500,
-              disableOnInteraction: false,
-            }}
-            modules={[Autoplay]}
-            className="mySwiper !m-0 rounded-2xl overflow-hidden"
-          >
-            <SwiperSlide>
-              <Image
-                src={hero06}
-                alt="لباس مردانه"
-                width={500}
-                height={500}
-                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Image
-                src={hero07}
-                alt="لباس مردانه"
-                width={500}
-                height={500}
-                className="w-full bg-cover md:h-[190px] lg:h-[230px]"
-              />
-            </SwiperSlide>
-          </Swiper>
-        </div>
-      </div>
+        <Grid gap={2} size={{ xs: 12, md: 4 }}
+          sx={{
+            height: { xs: 350, md: 500 },
+            display: "flex",
+            flexDirection: { xs: "column", sm: "row", md: "column" },
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}>
+          <Box width={"100%"} height={"100%"} sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            background: 'url("/images/banner-15.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}>
+            <Box sx={{ padding: 4, textAlign: "center" }}>
+              <Typography fontSize={{ xs: 16, md: 18 }}>تخفیف های شگفت انگیز</Typography>
+              <Typography variant="h6" fontSize={{ xs: 20, md: 26 }}>WEAELUXE</Typography>
+            </Box>
+          </Box>
+          <Box width={"100%"} height={"100%"} sx={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+            background: 'url("/images/banner-25.jpg")',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}>
+            <Box sx={{ padding: 4, textAlign: "center" }}>
+              <Typography fontSize={{ xs: 16, md: 18 }}>قیمت هایی مناسب</Typography>
+              <Typography variant="h6" fontSize={{ xs: 20, md: 26 }}>WEAELUXE</Typography>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
     </Container>
   );
 }
