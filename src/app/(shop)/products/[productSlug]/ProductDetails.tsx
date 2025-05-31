@@ -1,5 +1,5 @@
 import { IProduct } from "@/types/product";
-import { Divider, Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Box, Divider, Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
 
 function ProductDetails({ product }: { product: IProduct }) {
 
@@ -17,11 +17,11 @@ function ProductDetails({ product }: { product: IProduct }) {
 
                     <ListItem sx={{ display: "flex", justifyContent: "space-between", backgroundColor: "var(--color-primary-50)" }} >
                         <Typography>سایز</Typography>
-                        <Typography>{product.sizes.join(', ')}</Typography>
+                        <Typography>{product.size}</Typography>
                     </ListItem>
                     <ListItem sx={{ display: "flex", justifyContent: "space-between" }} >
                         <Typography>نوع</Typography>
-                        <Typography>{"add type"}</Typography>
+                        <Typography>{product.type}</Typography>
                     </ListItem>
 
                     <ListItem sx={{ display: "flex", justifyContent: "space-between", backgroundColor: "var(--color-primary-50)" }} >
@@ -31,13 +31,16 @@ function ProductDetails({ product }: { product: IProduct }) {
 
                     <ListItem sx={{ display: "flex", justifyContent: "space-between" }} >
                         <Typography>جنس</Typography>
-                        <Typography>{"add material"}</Typography>
+                        <Typography>{product.material}</Typography>
                     </ListItem>
 
-                    {product.sizes.map((size, index) =>
+                    {Object.entries(product.sizes).map(([key, value], index) =>
                         <ListItem key={index} sx={{ display: "flex", justifyContent: "space-between", backgroundColor: index % 2 === 0 ? "var(--color-primary-50)" : "transparent" }} >
-                            <Typography>سایز {size}</Typography>
-                            <Typography>{"add inseam"}</Typography>
+                            <Typography>سایز {key}</Typography>
+                            <Box sx={{ display: 'flex', gap: 1 }}>
+                                <Typography>عرض: {value.dimensions.width}</Typography>
+                                <Typography>طول: {value.dimensions.height}</Typography>
+                            </Box>
                         </ListItem>
                     )}
 
