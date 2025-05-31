@@ -18,7 +18,7 @@ import Searchbox from "./ui/searchbox";
 import { useSelector } from "react-redux";
 import { getTotalCartQuantity } from "@/app/cart/cartSlice";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 interface Props {
   /**
@@ -60,10 +60,16 @@ function HideOnScroll(props: Props) {
  * @returns The AppBar component with responsive navigation.
  */
 function Header(props: Props) {
+  const [clientRendered, setClientRendered] = useState(false);
   const totalCartQuantity = useSelector(getTotalCartQuantity) || 0
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
+  const displayQuantity = clientRendered ? totalCartQuantity : 0;
 
+
+  useEffect(() => {
+    setClientRendered(true);
+  }, []);
   // Toggle the mobile drawer open state.
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -125,7 +131,7 @@ function Header(props: Props) {
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Link href={"/cart"}>
                   <IconButton color="inherit">
-                    <Badge badgeContent={totalCartQuantity} color="success">
+                    <Badge badgeContent={displayQuantity} color="success">
                       <ShoppingCart />
                     </Badge>
                   </IconButton>
