@@ -1,10 +1,9 @@
 interface IProducts {
-    params: {};
-    searchParams: { title?: string }
+    searchParams: Promise<{ title: string }>
 }
 
-function ProductsPage({ searchParams }: IProducts) {
-    const title = searchParams.title || "page"
+async function ProductsPage({ searchParams }: IProducts) {
+    const title = (await searchParams).title || "page"
 
     return (<div>products {title}</div>);
 }
