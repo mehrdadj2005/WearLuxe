@@ -1,7 +1,6 @@
 "use client"
 
 import { decreaseItemQuantity, getCurrentQuantityById, ICart, increaseItemQuantity } from "@/app/cart/cartSlice";
-import { IProduct } from "@/types/product";
 import { Add, Remove } from "@mui/icons-material";
 import { Box, IconButton, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";

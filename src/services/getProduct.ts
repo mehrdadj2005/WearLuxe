@@ -1,5 +1,3 @@
-import { IProduct } from "@/types/product";
-
 /**
  * Fetches product data from the provided URL.
  *
