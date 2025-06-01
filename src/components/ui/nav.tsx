@@ -1,6 +1,10 @@
-import { categories } from "@/config/category";
+"use client"
+
+import { getProduct } from "@/services/getProduct";
+import { ICategory } from "@/types/category";
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface INav {
   className?: string;
@@ -26,11 +30,21 @@ interface INav {
  * <Nav className="custom-nav" type="horizontal" />
  */
 function Nav({ className, type }: INav) {
+  const [category, setCategory] = useState<ICategory[]>([]);
+
+  useEffect(() => {
+
+    const fetchCategories = async () => {
+      const { data } = await getProduct<ICategory[]>("http://localhost:4000/categories");
+      setCategory(data);
+    };
+    fetchCategories();
+  }, []);
+
   return (
     <List
-      className={`flex ${type === "vertical" && "flex-col"} items-center ${
-        type === "vertical" ? "" : "w-fit"
-      } text-nowrap ${className}`}
+      className={`flex ${type === "vertical" && "flex-col"} items-center ${type === "vertical" ? "" : "w-fit"
+        } text-nowrap ${className}`}
     >
       <ListItem disablePadding>
         <Link className={type === "vertical" ? "w-full" : ""} href={`/`}>
@@ -39,7 +53,7 @@ function Nav({ className, type }: INav) {
           </ListItemButton>
         </Link>
       </ListItem>
-      {categories.map((item) => (
+      {category.map((item) => (
         <ListItem key={item.id} disablePadding>
           <Link
             className={type === "vertical" ? "w-full" : ""}
