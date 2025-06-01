@@ -16,7 +16,6 @@ interface ProductSliderProps {
 }
 
 export default function ProductSlider({ data, className }: ProductSliderProps) {
-  console.log(data);
   return (
     <Container>
       <Box className="flex justify-between items-center">
