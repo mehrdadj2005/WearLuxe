@@ -4,7 +4,7 @@ interface IProducts {
 }
 
 function ProductsPage({ searchParams }: IProducts) {
-    const title = searchParams.title ?? "page"
+    const title = searchParams.title || "page"
 
     return (<div>products {title}</div>);
 }
