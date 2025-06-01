@@ -36,42 +36,42 @@ function Checkout() {
         }
     }
 
-    const validateForm = () => {
-        const newErrors: { [key: string]: string } = {}
+    // const validateForm = () => {
+    //     const newErrors: { [key: string]: string } = {}
 
-        if (!formData.firstName.trim()) {
-            newErrors.firstName = "نام الزامی است"
-        }
+    //     if (!formData.firstName.trim()) {
+    //         newErrors.firstName = "نام الزامی است"
+    //     }
 
-        if (!formData.lastName.trim()) {
-            newErrors.lastName = "نام خانوادگی الزامی است"
-        }
+    //     if (!formData.lastName.trim()) {
+    //         newErrors.lastName = "نام خانوادگی الزامی است"
+    //     }
 
-        if (!formData.city.trim()) {
-            newErrors.city = "شهر الزامی است"
-        }
+    //     if (!formData.city.trim()) {
+    //         newErrors.city = "شهر الزامی است"
+    //     }
 
-        if (!formData.address.trim()) {
-            newErrors.address = "آدرس الزامی است"
-        }
+    //     if (!formData.address.trim()) {
+    //         newErrors.address = "آدرس الزامی است"
+    //     }
 
-        if (!formData.street.trim()) {
-            newErrors.street = "نام خیابان الزامی است"
-        }
+    //     if (!formData.street.trim()) {
+    //         newErrors.street = "نام خیابان الزامی است"
+    //     }
 
-        if (!formData.phoneNumber.trim()) {
-            newErrors.phoneNumber = "شماره تلفن الزامی است"
-        } else if (!/^09\d{9}$/.test(formData.phoneNumber)) {
-            newErrors.phoneNumber = "شماره تلفن معتبر نیست"
-        }
+    //     if (!formData.phoneNumber.trim()) {
+    //         newErrors.phoneNumber = "شماره تلفن الزامی است"
+    //     } else if (!/^09\d{9}$/.test(formData.phoneNumber)) {
+    //         newErrors.phoneNumber = "شماره تلفن معتبر نیست"
+    //     }
 
-        if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-            newErrors.email = "ایمیل معتبر نیست"
-        }
+    //     if (formData.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+    //         newErrors.email = "ایمیل معتبر نیست"
+    //     }
 
-        setErrors(newErrors)
-        return Object.keys(newErrors).length === 0
-    }
+    //     setErrors(newErrors)
+    //     return Object.keys(newErrors).length === 0
+    // }
 
     return (
         <Paper elevation={2} sx={{ p: 3, mb: 3 }} >
