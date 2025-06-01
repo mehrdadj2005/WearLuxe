@@ -1,6 +1,6 @@
 interface IProducts {
     params: {};
-    searchParams: { title: string }
+    searchParams: { title?: string }
 }
 
 function ProductsPage({ searchParams }: IProducts) {
