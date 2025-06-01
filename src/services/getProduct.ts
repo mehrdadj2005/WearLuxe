@@ -21,7 +21,11 @@ export const getProduct = async <T>(
     const data: T = await res.json();
     if (!data) throw new Error("محصولی یافت نشد.");
     return { data, error: "" };
-  } catch (error: any) {
-    return { data: {} as T, error: error.message };
+  } catch (error: unknown) {
+    let message = "خطایی رخ داده است";
+    if (error instanceof Error) {
+      message = error.message;
+    }
+    return { data: {} as T, error: message };
   }
 };
