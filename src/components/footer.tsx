@@ -1,4 +1,3 @@
-import { categories } from "@/config/category";
 import { Email, Instagram, Telegram } from "@mui/icons-material";
 import {
   Box,
@@ -10,8 +9,13 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import Container from "./container";
+import { getProduct } from "@/services/getProduct";
+import { ICategory } from "@/types/category";
 
-function Footer() {
+async function Footer() {
+  const { data } = await getProduct<ICategory[]>("http://localhost:4000/categories")
+
+
   return (
     <Box component="footer" sx={{ bgcolor: "primary.main", py: 4 }}>
       <Container className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5 text-primary-50">
@@ -66,7 +70,7 @@ function Footer() {
             دسته‌بندی‌ها
           </Typography>
           <List sx={{ textAlign: "start" }}>
-            {categories.map((item) => (
+            {data.map((item) => (
               <ListItem key={item.id} disablePadding>
                 <Link href={`/products/category/${item.slug}`}>
                   <ListItemText primary={item.title} />
