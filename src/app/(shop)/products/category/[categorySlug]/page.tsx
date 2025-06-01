@@ -23,7 +23,13 @@ export default async function CategoryPage({
     `http://localhost:4000/products?${filters}`
   );
 
-  console.log(data);
+  if (error) {
+    return <div>Error loading products</div>;
+  }
+
+  if (!data && !error) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <Container
