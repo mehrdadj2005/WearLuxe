@@ -4,7 +4,7 @@ interface IProducts {
 }
 
 async function ProductsPage({ searchParams }: IProducts) {
-    const title = (await searchParams).title ?? ""
+    const title = (await searchParams).title ?? {}
 
     return (<div>products {title || "page"}</div>);
 }
