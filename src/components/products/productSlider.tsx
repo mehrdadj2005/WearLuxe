@@ -1,39 +1,27 @@
 "use client";
 
+import { IProduct } from "@/types/product";
 import { Box, Button, Typography } from "@mui/material";
+import Link from "next/link";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Container from "../container";
 import ProductCard from "./productCard";
-import Link from "next/link";
 
-interface Product {
-  id: string;
-  slug: string;
-  title: string;
-  price: number;
-  colors: string[];
-  sizes: string[];
-  images: string[];
-  rating: number;
-  description?: string;
-  items?: string[];
-  discountePercentage?: number;
-  discountedPrice?: number;
-}
 interface ProductSliderProps {
-  data: Product;
+  data: IProduct[];
   className?: string;
 }
 
 export default function ProductSlider({ data, className }: ProductSliderProps) {
+  console.log(data);
   return (
     <Container>
       <Box className="flex justify-between items-center">
         <Typography variant="h6" className="pr-8 text-neutral-800 pt-4 pb-2">
-          {data.title}
+          {data[0].categoryName}
         </Typography>
 
         <Button
@@ -69,10 +57,10 @@ export default function ProductSlider({ data, className }: ProductSliderProps) {
           },
         }}
       >
-        {data.products.map((item) => (
+        {data.map((item: IProduct) => (
           <SwiperSlide key={item.id}>
             <Link href={`products/${item.id}`}>
-              <ProductCard {...item} />
+              <ProductCard item={item} />
             </Link>
           </SwiperSlide>
         ))}

@@ -1,8 +1,8 @@
 "use client";
 
-import { KeyboardArrowLeft, Person2Outlined } from "@mui/icons-material";
+import { KeyboardArrowLeft, Person2Outlined, ShoppingCart } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Slide, useScrollTrigger } from "@mui/material";
+import { Badge, Slide, useScrollTrigger } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -12,10 +12,13 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import * as React from "react";
 import Container from "./container";
 import Nav from "./ui/nav";
 import Searchbox from "./ui/searchbox";
+import { useSelector } from "react-redux";
+import { getTotalCartQuantity } from "@/app/cart/cartSlice";
+import Link from "next/link";
+import { useEffect, useState } from "react";
 
 interface Props {
   /**
@@ -39,7 +42,7 @@ const drawerWidth = 240;
 function HideOnScroll(props: Props) {
   const { children, window } = props;
   const trigger = useScrollTrigger({
-    target: window ? window() : undefined,
+    target: typeof window !== "undefined" ? window() : undefined,
   });
 
   return (
@@ -57,9 +60,16 @@ function HideOnScroll(props: Props) {
  * @returns The AppBar component with responsive navigation.
  */
 function Header(props: Props) {
+  const [clientRendered, setClientRendered] = useState(false);
+  const totalCartQuantity = useSelector(getTotalCartQuantity) || 0
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const displayQuantity = clientRendered ? totalCartQuantity : 0;
 
+
+  useEffect(() => {
+    setClientRendered(true);
+  }, []);
   // Toggle the mobile drawer open state.
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -85,7 +95,15 @@ function Header(props: Props) {
       <HideOnScroll {...props}>
         <AppBar component="header">
           <Container>
-            <Toolbar className="flex gap-2 justify-between items-center !p-0">
+            <Toolbar
+              sx={{
+                display: "flex",
+                gap: 2,
+                justifyContent: "space-between",
+                alignItems: "center",
+                p: { xs: 0 },
+              }}
+            >
               <Typography
                 variant="h6"
                 sx={{ display: { xs: "none", sm: "block" } }}
@@ -97,7 +115,7 @@ function Header(props: Props) {
                 aria-label="open drawer"
                 edge="start"
                 onClick={handleDrawerToggle}
-                sx={{ mr: 2, display: { sm: "none" } }}
+                sx={{ display: { sm: "none" } }}
               >
                 <MenuIcon />
               </IconButton>
@@ -110,25 +128,35 @@ function Header(props: Props) {
               >
                 <Searchbox />
               </Box>
-              <div>
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <Link href={"/cart"}>
+                  <IconButton color="inherit">
+                    <Badge badgeContent={displayQuantity} color="success">
+                      <ShoppingCart />
+                    </Badge>
+                  </IconButton>
+                </Link>
                 <Button
                   variant="outlined"
                   color="inherit"
                   startIcon={<Person2Outlined />}
-                  endIcon={<KeyboardArrowLeft />}
+                  endIcon={
+                    <Box sx={{ display: { xs: "none", md: "flex" } }}>
+                      <KeyboardArrowLeft />
+                    </Box>
+                  }
                   size="medium"
-                  sx={{ display: { xs: "none", sm: "flex" } }}
-                  className="flex gap-2"
+                  sx={{ display: { xs: "none", sm: "flex" }, gap: 2 }}
                 >
                   وارد شوید
                 </Button>
-                <Typography
+                {/* <Typography
                   variant="h6"
                   sx={{ display: { xs: "block", sm: "none" } }}
                 >
                   LOGO
-                </Typography>
-              </div>
+                </Typography> */}
+              </Box>
             </Toolbar>
 
             <Box>
@@ -175,7 +203,7 @@ function Header(props: Props) {
           {drawer}
         </Drawer>
       </nav>
-    </Box>
+    </Box >
   );
 }
 

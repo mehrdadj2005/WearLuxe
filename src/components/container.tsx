@@ -1,15 +1,28 @@
+import { Box } from "@mui/material";
 import { ReactNode } from "react";
 
 interface ContainerProps {
   children: ReactNode;
+  sx?: object;
   className?: string;
 }
 
-const Container = ({ children, className = "" }: ContainerProps) => {
+const Container = ({ children, sx, className }: ContainerProps) => {
   return (
-    <div className={`max-w-[1400px] w-full mx-auto px-4 2xl:px-0 ${className}`}>
+    <Box
+      sx={{
+        ...sx,
+        maxWidth: "1400px",
+        width: "100%",
+        margin: "0 auto",
+        paddingLeft: "16px",
+        paddingRight: " 16px",
+        xl: { padding: "0 32px" },
+      }}
+      className={className}
+    >
       {children}
-    </div>
+    </Box>
   );
 };
 
