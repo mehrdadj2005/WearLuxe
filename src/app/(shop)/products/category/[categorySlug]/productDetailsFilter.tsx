@@ -256,7 +256,7 @@ export default function ProductDetailsFilter({
                   حداقل
                 </Typography>
                 <Slider
-                  sx={{ width: "100%", color: "primary.main" }}
+                  sx={{ width: "100%", color: "var(--color-primary-500)" }}
                   value={value}
                   onChange={handleChange}
                   step={50000}
