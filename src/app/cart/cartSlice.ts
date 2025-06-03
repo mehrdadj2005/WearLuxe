@@ -90,6 +90,9 @@ const cartSlice = createSlice({
     clearCart(state) {
       state.cart = [];
     },
+    loadCartFromStorage(state, action: PayloadAction<ICart[]>) {
+      state.cart = action.payload;
+    },
   },
 });
 
@@ -99,6 +102,7 @@ export const {
   increaseItemQuantity,
   decreaseItemQuantity,
   clearCart,
+  loadCartFromStorage,
 } = cartSlice.actions;
 export default cartSlice.reducer;
 

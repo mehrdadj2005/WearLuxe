@@ -57,10 +57,11 @@ function ProductActionGroup({ product }: { product: IProduct }) {
                     onChange={handleChange}
                     sx={{ direction: "ltr" }}
                 >
-                    {Object.keys(product.sizes).map((size, index) => (
-                        <ToggleButton key={index} value={size}>
-                            {size}
+                    {Object.entries(product.sizes).map(([key, value], index) => (
+                        <ToggleButton disabled={!value.stock} key={index} value={key}>
+                            {key}
                         </ToggleButton>
+
                     ))}
                 </ToggleButtonGroup>
             </Box>

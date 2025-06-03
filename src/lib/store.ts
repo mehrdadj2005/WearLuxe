@@ -1,10 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import cartReducer from "@/app/cart/cartSlice";
+import { loadCartFromLocalStorage } from "@/helper/localStorage";
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
       cart: cartReducer,
+    },
+    preloadedState: {
+      cart: {
+        cart: loadCartFromLocalStorage(),
+      },
     },
   });
 };

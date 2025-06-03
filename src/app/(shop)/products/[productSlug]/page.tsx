@@ -7,6 +7,7 @@ import { ArrowLeft } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
 import ProductActionGroup from "./ProductActionGroup";
 import { IProduct } from "@/types/product";
+import { formatPrice } from "@/helper/helper";
 
 interface ICategory {
   params: Promise<{ productSlug: string }>;
@@ -57,7 +58,7 @@ async function ProductId({ params }: ICategory) {
                 justifyContent: "space-between",
               }}
             >
-              <Typography variant="h5">{data?.name}</Typography>
+              <Typography variant="h5">{data.name}</Typography>
               <Box
                 sx={{
                   display: "flex",
@@ -95,7 +96,7 @@ async function ProductId({ params }: ICategory) {
                         : "none",
                     }}
                   >
-                    {data?.price.toLocaleString()} تومان
+                    {formatPrice(data.price)}
                   </Typography>
                   {data.discountedPercentage !== 0 && (
                     <>
@@ -111,7 +112,7 @@ async function ProductId({ params }: ICategory) {
                           backgroundColor: "var(--color-primary-400)",
                         }}
                       >
-                        {data?.discountedPrice.toLocaleString()} تومان
+                        {formatPrice(data.discountedPrice)}
                       </Typography>
                     </>
                   )}

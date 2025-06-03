@@ -17,22 +17,30 @@ import { useDispatch, useSelector } from "react-redux"
 import CartQuantityButton from "@/components/ui/button/cartQuantityButton"
 import Link from "next/link"
 import { formatPrice } from "@/helper/helper"
+import { useEffect, useState } from "react"
 
 
 
 
 function CartPage() {
     const cart = useSelector(getCart)
+    const [clientRendered, setClientRendered] = useState(false);
     const dispatch = useDispatch()
+    const cartLength = clientRendered ? cart.length : 0;
+
+    useEffect(() => {
+        setClientRendered(true)
+    }, [])
+
 
     return (
         <Paper elevation={2} sx={{ p: 3, mb: 3 }}>
             <Typography variant="h6" gutterBottom>
-                محصولات سبد خرید ({cart.length})
+                محصولات سبد خرید ({cartLength})
             </Typography>
             <Divider sx={{ mb: 2 }} />
 
-            {cart.length === 0 ? (
+            {cartLength === 0 ? (
                 <Typography>سبد خرید شما خالی است</Typography>
             ) : (
                 <Stack spacing={2}>

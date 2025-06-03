@@ -6,16 +6,16 @@ import { IProduct } from "@/types/product";
 import { Box, CardMedia } from "@mui/material";
 
 export default async function HomePage() {
-  const dataShirts = await getProduct(
+  const { data: dataShirts } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=1"
   );
-  const dataPants = await getProduct(
+  const { data: dataPants } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=2"
   );
-  const dataCats = await getProduct(
+  const { data: dataCats } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=3"
   );
-  const dataSets = await getProduct(
+  const { data: dataSets } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=4"
   );
 
@@ -23,15 +23,15 @@ export default async function HomePage() {
     <>
       <HeroSection />
       <Box className="bg-primary-200 py-4 md:py-8">
-        <ProductSlider data={dataPants.data as IProduct[]} />
+        <ProductSlider data={dataPants} />
       </Box>
-      <ProductSlider data={dataShirts.data as IProduct[]} />
-      <ProductSlider data={dataCats.data as IProduct[]} />
+      <ProductSlider data={dataShirts} />
+      <ProductSlider data={dataCats} />
       <Box className="bg-secondary-200 py-4 md:py-8">
-        <ProductSlider data={dataSets.data as IProduct[]} />
+        <ProductSlider data={dataSets} />
       </Box>
-      <ProductSlider data={dataPants.data as IProduct[]} />
-      <ProductSlider data={dataShirts.data as IProduct[]} />
+      <ProductSlider data={dataPants} />
+      <ProductSlider data={dataShirts} />
       <Container>
         <Box className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 px-8 md:px-16 py-4 md:py-8">
           <CardMedia
@@ -60,8 +60,8 @@ export default async function HomePage() {
           />
         </Box>
       </Container>
-      <ProductSlider data={dataCats.data as IProduct[]} />
-      <ProductSlider data={dataSets.data as IProduct[]} />
+      <ProductSlider data={dataCats} />
+      <ProductSlider data={dataSets} />
     </>
   );
 }

@@ -5,10 +5,20 @@ import Link from "next/link";
 import { getTotalCartPrice, getTotalCartQuantity } from "./cartSlice";
 import { useSelector } from "react-redux";
 import { formatPrice } from "@/helper/helper";
+import { useEffect, useState } from "react";
 
 function OrderSummary() {
+    const [clientRendered, setClientRendered] = useState(false);
     const totalPrice = useSelector(getTotalCartPrice)
     const cartItems = useSelector(getTotalCartQuantity)
+    const getTotalPrice = clientRendered ? totalPrice : 0;
+    const getCartItems = clientRendered ? cartItems : 0;
+
+
+    useEffect(() => {
+        setClientRendered(true)
+    }, [])
+
 
     return (
         <Paper elevation={2} sx={{ p: 3, position: "sticky", top: 20 }}>
@@ -19,7 +29,7 @@ function OrderSummary() {
 
             <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
                 <Typography>جمع سبد خرید</Typography>
-                <Typography>{formatPrice(totalPrice)}</Typography>
+                <Typography>{formatPrice(getTotalPrice)}</Typography>
             </Box>
 
             <Box sx={{ display: "flex", justifyContent: "space-between", mb: 1 }}>
@@ -31,10 +41,10 @@ function OrderSummary() {
 
             <Box sx={{ display: "flex", justifyContent: "space-between", mb: 3 }}>
                 <Typography variant="h6">مبلغ قابل پرداخت</Typography>
-                <Typography variant="h6">{formatPrice(totalPrice + 150000)}</Typography>
+                <Typography variant="h6">{formatPrice(getTotalPrice + 150000)}</Typography>
             </Box>
 
-            {cartItems ? (
+            {getCartItems ? (
                 <Link href="/cart/checkout">
                     <Button
                         variant="contained"
