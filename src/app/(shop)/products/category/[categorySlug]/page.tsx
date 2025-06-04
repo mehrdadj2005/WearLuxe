@@ -7,20 +7,25 @@ import { IProduct } from "@/types/product";
 import { Box } from "@mui/material";
 interface ICategoryPageProps {
   searchParams: Promise<{ sort: string }>;
+  params: Promise<{ categorySlug: string }>;
 }
 
 export default async function CategoryPage({
   searchParams,
+  params,
 }: ICategoryPageProps) {
   const url = (await searchParams) as Record<string, string>;
-
   let filters = "";
   for (const i in url) {
     filters += `${i}=${url[i]}&`;
   }
 
   const { data, error } = await getProduct(
-    `http://localhost:4000/products?${filters}`
+    `http://localhost:4000/products?categoryId=${
+      (
+        await params
+      ).categorySlug
+    }&${filters}`
   );
 
   if (error) {
