@@ -1,4 +1,5 @@
-import { categories } from "@/config/category";
+import { getProduct } from "@/services/getProduct";
+import { ICategory } from "@/types/category";
 import { List, ListItem, ListItemButton, ListItemText } from "@mui/material";
 import Link from "next/link";
 
@@ -25,7 +26,11 @@ interface INav {
  * // Render a horizontal navigation list
  * <Nav className="custom-nav" type="horizontal" />
  */
-function Nav({ className, type }: INav) {
+async function Nav({ className, type }: INav) {
+  const categories = await (
+    await getProduct<ICategory[]>("http://localhost:4000/categories")
+  ).data;
+
   return (
     <List
       className={`flex ${type === "vertical" && "flex-col"} items-center ${
