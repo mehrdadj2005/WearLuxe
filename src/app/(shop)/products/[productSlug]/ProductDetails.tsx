@@ -1,5 +1,5 @@
 import { IProduct } from "@/types/product";
-import { Box, Divider, Grid, List, ListItem, ListItemText, Typography } from "@mui/material";
+import { Box, Grid, List, ListItem, Typography } from "@mui/material";
 
 function ProductDetails({ product }: { product: IProduct }) {
 

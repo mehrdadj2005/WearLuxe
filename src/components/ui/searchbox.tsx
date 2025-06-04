@@ -25,6 +25,7 @@ function Searchbox() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     function handleSearch(e: KeyboardEvent) {
       if (e.key === "Enter")

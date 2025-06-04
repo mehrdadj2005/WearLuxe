@@ -18,7 +18,7 @@ import Searchbox from "./ui/searchbox";
 import { useSelector } from "react-redux";
 import { getTotalCartQuantity } from "@/app/cart/cartSlice";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 
 interface Props {
   /**
@@ -126,7 +126,9 @@ function Header(props: Props) {
                   width: "50%",
                 }}
               >
-                <Searchbox />
+                <Suspense fallback={<div>صبر کنید...</div>}>
+                  <Searchbox />
+                </Suspense>
               </Box>
               <Box sx={{ display: "flex", alignItems: "center" }}>
                 <Link href={"/cart"}>

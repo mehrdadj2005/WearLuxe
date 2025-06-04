@@ -1,5 +1,3 @@
-import { getProduct } from "@/services/getProduct";
-import { ICategory } from "@/types/category";
 import { Email, Instagram, Telegram } from "@mui/icons-material";
 import {
   Box,
@@ -11,11 +9,12 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import Container from "./container";
+import { getProduct } from "@/services/getProduct";
+import { ICategory } from "@/types/category";
 
 async function Footer() {
-  const categories = await (
-    await getProduct<ICategory[]>("http://localhost:4000/categories")
-  ).data;
+  const { data } = await getProduct<ICategory[]>("http://localhost:4000/categories")
+
 
   return (
     <Box component="footer" sx={{ bgcolor: "primary.main", py: 4 }}>
@@ -71,7 +70,7 @@ async function Footer() {
             دسته‌بندی‌ها
           </Typography>
           <List sx={{ textAlign: "start" }}>
-            {categories.map((item) => (
+            {data.map((item) => (
               <ListItem key={item.id} disablePadding>
                 <Link href={`/products/category/${item.slug}`}>
                   <ListItemText primary={item.title} />

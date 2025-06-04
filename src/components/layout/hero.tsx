@@ -1,18 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import "swiper/css";
 import 'swiper/css/navigation';
 import 'swiper/css/navigation';
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import hero01 from "../../../public/images/hero01.webp";
-import hero02 from "../../../public/images/hero02.jpg";
-import hero03 from "../../../public/images/hero03.jpg";
-import hero04 from "../../../public/images/hero04.jpg";
-import hero05 from "../../../public/images/hero05.jpg";
-import hero06 from "../../../public/images/hero06.jpg";
-import hero07 from "../../../public/images/hero07.jpg";
 import Container from "../container";
 import { Box, Grid, Typography } from "@mui/material";
 

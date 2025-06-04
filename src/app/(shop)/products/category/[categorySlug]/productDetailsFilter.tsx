@@ -60,6 +60,7 @@ export default function ProductDetailsFilter({
     setValue(newValue);
   };
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!didMount) {
       setDidMount(true);
