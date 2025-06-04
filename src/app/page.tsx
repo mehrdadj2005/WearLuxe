@@ -14,7 +14,7 @@ export default async function HomePage() {
   const { data: dataPants } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=2"
   );
-  const { data: dataCats } = await getProduct<IProduct[]>(
+  const { data: dataCaps } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=3"
   );
   const { data: dataSets } = await getProduct<IProduct[]>(
@@ -94,9 +94,9 @@ export default async function HomePage() {
           />
         </Box>
       </Container>
-      <ProductSlider sx={{ pt: "20px" }} data={dataCats} />
+      <ProductSlider sx={{ pt: "20px" }} data={dataCaps} />
       <ProductSlider sx={{ pt: "20px" }} data={dataPants} />
-      <Container sx={{ width: "100%", height: "200px" }}>
+      <Container sx={{ width: "100%", height: "200px", pt: "20px" }}>
         <CardMedia
           sx={{
             borderRadius: "12px",
