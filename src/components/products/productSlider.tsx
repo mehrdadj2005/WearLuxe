@@ -13,9 +13,14 @@ import ProductCard from "./productCard";
 interface ProductSliderProps {
   data: IProduct[];
   className?: string;
+  sx?: object;
 }
 
-export default function ProductSlider({ data, className }: ProductSliderProps) {
+export default function ProductSlider({
+  data,
+  className,
+  sx,
+}: ProductSliderProps) {
   return (
     <Container>
       <Box
@@ -24,6 +29,7 @@ export default function ProductSlider({ data, className }: ProductSliderProps) {
           justifyContent: "space-between",
           alignItems: "center",
           padding: "0 16px",
+          ...sx,
         }}
       >
         <Typography
