@@ -1,4 +1,9 @@
 {
+  "banners": [{
+    "alt": "Landing Banner",
+    "id": "landing-baner",
+    "src": "/images/landing-baner.jpeg"
+  }],
   "categories": [{
       "id": "1",
       "slug": "pants",
@@ -18,6 +23,27 @@
       "id": "4",
       "slug": "sets",
       "title": "ست"
+    }
+  ],
+  "options": [{
+      "id": "option-1",
+      "name": "ارسال سریع",
+      "src": "/images/fast-car.png"
+    },
+    {
+      "id": "option-3",
+      "name": "امکان بازگشت کالا",
+      "src": "/images/box.svg"
+    },
+    {
+      "id": "option-2",
+      "name": "امکان پرداخت در محل",
+      "src": "/images/card.png"
+    },
+    {
+      "id": "option-4",
+      "name": "پشتیبانی 24 ساعته",
+      "src": "/images/clock.svg"
     }
   ],
   "orders": [{
