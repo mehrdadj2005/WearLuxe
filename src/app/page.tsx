@@ -2,8 +2,10 @@ import Container from "@/components/container";
 import HeroSection from "@/components/layout/hero";
 import ProductSlider from "@/components/products/productSlider";
 import { getProduct } from "@/services/getProduct";
+import { IBanner } from "@/types/banners";
+import { IOption } from "@/types/options";
 import { IProduct } from "@/types/product";
-import { Box, CardMedia } from "@mui/material";
+import { Box, CardMedia, Typography } from "@mui/material";
 
 export default async function HomePage() {
   const { data: dataShirts } = await getProduct<IProduct[]>(
@@ -18,20 +20,52 @@ export default async function HomePage() {
   const { data: dataSets } = await getProduct<IProduct[]>(
     "http://localhost:4000/products?categoryId=4"
   );
-
+  const { data: dataOptions } = await getProduct<IOption[]>(
+    "http://localhost:4000/options"
+  );
+  const { data: landingBaner } = await getProduct<IBanner[]>(
+    "http://localhost:4000/banners"
+  );
+  const { alt, src } = landingBaner[0];
   return (
     <>
       <HeroSection />
-      <Box className="bg-primary-200 py-4 md:py-8">
-        <ProductSlider data={dataPants} />
-      </Box>
-      <ProductSlider data={dataShirts} />
-      <ProductSlider data={dataCats} />
-      <Box className="bg-secondary-200 py-4 md:py-8">
-        <ProductSlider data={dataSets} />
-      </Box>
-      <ProductSlider data={dataPants} />
-      <ProductSlider data={dataShirts} />
+      <Container
+        sx={{
+          backgroundColor: "var(--color-neutral-200)",
+          borderRadius: "18px",
+          display: "flex",
+          padding: "30px 0",
+          justifyContent: "space-around",
+        }}
+      >
+        {dataOptions.map((option) => (
+          <Box
+            key={option.id}
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              flexDirection: "row",
+              gap: "8px",
+            }}
+          >
+            <CardMedia
+              component="img"
+              image={option.src}
+              alt={option.name}
+              sx={{
+                width: "40px",
+                height: "auto",
+                borderRadius: "12px",
+              }}
+            />
+            <Typography variant="h6" sx={{ color: "var(--color-neutral-600)" }}>
+              {option.name}
+            </Typography>
+          </Box>
+        ))}
+      </Container>
+      <ProductSlider sx={{ pt: "20px" }} data={dataShirts} />
       <Container>
         <Box className="grid grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-4 px-8 md:px-16 py-4 md:py-8">
           <CardMedia
@@ -60,8 +94,22 @@ export default async function HomePage() {
           />
         </Box>
       </Container>
-      <ProductSlider data={dataCats} />
-      <ProductSlider data={dataSets} />
+      <ProductSlider sx={{ pt: "20px" }} data={dataCats} />
+      <ProductSlider sx={{ pt: "20px" }} data={dataPants} />
+      <Container sx={{ width: "100%", height: "200px" }}>
+        <CardMedia
+          sx={{
+            borderRadius: "12px",
+            overflow: "hidden",
+            width: "100%",
+            height: "100%",
+          }}
+          component="img"
+          image={src}
+          alt={alt}
+        />
+      </Container>
+      <ProductSlider sx={{ pt: "20px" }} data={dataSets} />
     </>
   );
 }
