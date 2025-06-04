@@ -1,9 +1,13 @@
 @import "tailwindcss";
 @import "../style/font.css";
+
 /* :root {
   --background: #ffffff;
   --foreground: #171717;
 } */
+* {
+  user-select: none;
+}
 
 @theme inline {
   /* colors */
