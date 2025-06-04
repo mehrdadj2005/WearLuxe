@@ -31,9 +31,10 @@ function Nav({ className, type }: INav) {
   const [category, setCategory] = useState<ICategory[]>([]);
 
   useEffect(() => {
-
     const fetchCategories = async () => {
-      const { data } = await getProduct<ICategory[]>("http://localhost:4000/categories");
+      const { data } = await getProduct<ICategory[]>(
+        "http://localhost:4000/categories"
+      );
       setCategory(data);
     };
     fetchCategories();
@@ -41,8 +42,9 @@ function Nav({ className, type }: INav) {
 
   return (
     <List
-      className={`flex ${type === "vertical" && "flex-col"} items-center ${type === "vertical" ? "" : "w-fit"
-        } text-nowrap ${className}`}
+      className={`flex ${type === "vertical" && "flex-col"} items-center ${
+        type === "vertical" ? "" : "w-fit"
+      } text-nowrap ${className}`}
     >
       <ListItem disablePadding>
         <Link className={type === "vertical" ? "w-full" : ""} href={`/`}>
@@ -55,7 +57,7 @@ function Nav({ className, type }: INav) {
         <ListItem key={item.id} disablePadding>
           <Link
             className={type === "vertical" ? "w-full" : ""}
-            href={`/products/category/${item.slug}`}
+            href={`/products/category/${item.id}`}
           >
             <ListItemButton sx={{ textAlign: "center" }}>
               <ListItemText primary={item.title} />
