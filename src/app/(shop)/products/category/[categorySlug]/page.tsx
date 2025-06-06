@@ -5,6 +5,7 @@ import ProductCard from "@/components/products/productCard";
 import { getProduct } from "@/services/getProduct";
 import { IProduct } from "@/types/product";
 import { Box } from "@mui/material";
+import Link from "next/link";
 interface ICategoryPageProps {
   searchParams: Promise<{ sort: string }>;
   params: Promise<{ categorySlug: string }>;
@@ -96,7 +97,9 @@ export default async function CategoryPage({
                 justifyContent: "center",
               }}
             >
-              <ProductCard item={item} />
+              <Link href={`/products/${item.id}`}>
+                <ProductCard item={item} />
+              </Link>
             </Box>
           ))}
         </Box>
