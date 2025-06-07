@@ -2,6 +2,7 @@ import Container from "@/components/container";
 import { getProduct } from "@/services/getProduct";
 import { Box, Divider, Grid, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
+import ProductError from "./error";
 import { ArrowLeft } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
 import ProductActionGroup from "./ProductActionGroup";
@@ -18,15 +19,17 @@ async function ProductId({ params }: ICategory) {
     `http://localhost:4000/products/${(await params).productSlug}`
   );
 
-  if (error || Object.keys(data).length === 0 || !data) return <Box>No product found</Box>;
+  if (error || Object.keys(data).length === 0 || !data) return <ProductError error={error} />;
 
   return (
     <Container>
       <Grid container spacing={3} sx={{ paddingY: { xs: 10, md: 10 } }}>
         <Grid size={{ xs: 12, md: 5 }}>
           <Image
-            src={data.images[0] ?? ""}
-            alt={data.name ?? ""}
+            src={Array.isArray(data.images) && data.images[0]
+              ? data.images[0]
+              : ""}
+            alt={data.name || ""}
             width={500}
             height={500}
             className="w-full"
@@ -134,7 +137,8 @@ async function ProductId({ params }: ICategory) {
                 >
                   :
                 </Typography>
-                <Typography>{Object.keys(data.sizes).join(", ")}</Typography>
+                <Typography>{typeof data.sizes === "object" && data.sizes !== null
+                  ? Object.keys(data.sizes).join(", ") : ""}</Typography>
               </ListItem>
 
               <ListItem
@@ -154,7 +158,7 @@ async function ProductId({ params }: ICategory) {
                 >
                   :
                 </Typography>
-                <Typography>{data.colors.join(", ")}</Typography>
+                <Typography>{Array.isArray(data.colors) ? data.colors.join(", ") : ""}</Typography>
               </ListItem>
 
               <ListItem
