@@ -1,7 +1,7 @@
 "use client";
 
 import Container from "@/components/container";
-import { dataFilter } from "@/config/productDatailsFilter";
+import { dataColorFilter, dataSizeFilter } from "@/config/productDatailsFilter";
 import CloseIcon from "@mui/icons-material/Close";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import {
@@ -39,6 +39,13 @@ export default function ProductDetailsFilter({
     null
   );
   const [validationCheck, setValidationCheck] = useState(false);
+  const [slugValid, setSlugValid] = useState(false);
+
+  const { sizeNumber, sizes } = dataSizeFilter;
+
+  useEffect(() => {
+    setSlugValid(pathname.charAt(pathname.length - 1) == "1" ? true : false);
+  }, [pathname]);
 
   useEffect(() => {
     const url = searchParams.toString().split("&");
@@ -60,7 +67,6 @@ export default function ProductDetailsFilter({
     setValue(newValue);
   };
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     if (!didMount) {
       setDidMount(true);
@@ -159,7 +165,7 @@ export default function ProductDetailsFilter({
           </AccordionDetails>
         </Accordion>
 
-        {Object.entries(dataFilter).map(([key, { title, filters }]) => (
+        {Object.entries(dataColorFilter).map(([key, { title, filters }]) => (
           <Accordion key={key} sx={{ mt: 2 }}>
             <AccordionSummary expandIcon={<KeyboardArrowDownIcon />}>
               <Typography
@@ -193,6 +199,57 @@ export default function ProductDetailsFilter({
             </AccordionDetails>
           </Accordion>
         ))}
+
+        <Accordion sx={{ mt: 2 }}>
+          <AccordionSummary expandIcon={<KeyboardArrowDownIcon />}>
+            <Typography variant="overline" sx={{ fontSize: "16px !important" }}>
+              {sizeNumber.title}
+            </Typography>
+          </AccordionSummary>
+          <AccordionDetails>
+            {slugValid
+              ? sizeNumber.filters.map(({ id, name }) => (
+                  <FormGroup key={id}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          onChange={(e) => setValidationCheck(e.target.checked)}
+                        />
+                      }
+                      label={name}
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row-reverse",
+                        justifyContent: "space-between",
+                      }}
+                      onClick={() => {
+                        setHandleFilterChange(id);
+                      }}
+                    />
+                  </FormGroup>
+                ))
+              : sizes.filters.map(({ id, name }) => (
+                  <FormGroup key={id}>
+                    <FormControlLabel
+                      control={
+                        <Checkbox
+                          onChange={(e) => setValidationCheck(e.target.checked)}
+                        />
+                      }
+                      label={name}
+                      sx={{
+                        display: "flex",
+                        flexDirection: "row-reverse",
+                        justifyContent: "space-between",
+                      }}
+                      onClick={() => {
+                        setHandleFilterChange(id);
+                      }}
+                    />
+                  </FormGroup>
+                ))}
+          </AccordionDetails>
+        </Accordion>
       </Box>
 
       <Drawer
@@ -257,7 +314,7 @@ export default function ProductDetailsFilter({
                   حداقل
                 </Typography>
                 <Slider
-                  sx={{ width: "100%", color: "primary.main" }}
+                  sx={{ width: "100%", color: "var(--color-primary-500)" }}
                   value={value}
                   onChange={handleChange}
                   step={50000}
@@ -274,7 +331,7 @@ export default function ProductDetailsFilter({
             </AccordionDetails>
           </Accordion>
 
-          {Object.entries(dataFilter).map(([key, { title, filters }]) => (
+          {Object.entries(dataColorFilter).map(([key, { title, filters }]) => (
             <Accordion key={key} sx={{ mt: 2 }}>
               <AccordionSummary expandIcon={<KeyboardArrowDownIcon />}>
                 <Typography
@@ -308,6 +365,64 @@ export default function ProductDetailsFilter({
               </AccordionDetails>
             </Accordion>
           ))}
+
+          <Accordion sx={{ mt: 2 }}>
+            <AccordionSummary expandIcon={<KeyboardArrowDownIcon />}>
+              <Typography
+                variant="overline"
+                sx={{ fontSize: "16px !important" }}
+              >
+                {sizeNumber.title}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              {slugValid
+                ? sizeNumber.filters.map(({ id, name }) => (
+                    <FormGroup key={id}>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            onChange={(e) =>
+                              setValidationCheck(e.target.checked)
+                            }
+                          />
+                        }
+                        label={name}
+                        sx={{
+                          display: "flex",
+                          flexDirection: "row-reverse",
+                          justifyContent: "space-between",
+                        }}
+                        onClick={() => {
+                          setHandleFilterChange(id);
+                        }}
+                      />
+                    </FormGroup>
+                  ))
+                : sizes.filters.map(({ id, name }) => (
+                    <FormGroup key={id}>
+                      <FormControlLabel
+                        control={
+                          <Checkbox
+                            onChange={(e) =>
+                              setValidationCheck(e.target.checked)
+                            }
+                          />
+                        }
+                        label={name}
+                        sx={{
+                          display: "flex",
+                          flexDirection: "row-reverse",
+                          justifyContent: "space-between",
+                        }}
+                        onClick={() => {
+                          setHandleFilterChange(id);
+                        }}
+                      />
+                    </FormGroup>
+                  ))}
+            </AccordionDetails>
+          </Accordion>
         </Container>
       </Drawer>
     </Box>

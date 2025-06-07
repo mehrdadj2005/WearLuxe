@@ -1,6 +1,10 @@
 {
-  "categories": [
-    {
+  "banners": [{
+    "alt": "Landing Banner",
+    "id": "landing-baner",
+    "src": "/images/landing-baner.jpeg"
+  }],
+  "categories": [{
       "id": "1",
       "slug": "pants",
       "title": "شلوار"
@@ -12,7 +16,7 @@
     },
     {
       "id": "3",
-      "slug": "cats",
+      "slug": "caps",
       "title": "کلاه"
     },
     {
@@ -21,35 +25,59 @@
       "title": "ست"
     }
   ],
-  "orders": [
+  "options": [{
+      "id": "option-1",
+      "name": "ارسال سریع",
+      "src": "/images/fast-car.png"
+    },
     {
-      "id": "o1",
-      "products": [
-        {
-          "productId": "101",
-          "quantity": 2
-        },
-        {
-          "productId": "201",
-          "quantity": 1
-        }
-      ],
-      "status": "processing",
-      "total": 860000,
-      "userId": "u1"
+      "id": "option-3",
+      "name": "امکان بازگشت کالا",
+      "src": "/images/box.svg"
+    },
+    {
+      "id": "option-2",
+      "name": "امکان پرداخت در محل",
+      "src": "/images/card.png"
+    },
+    {
+      "id": "option-4",
+      "name": "پشتیبانی 24 ساعته",
+      "src": "/images/clock.svg"
     }
   ],
-  "products": [
-    {
+  "orders": [{
+    "id": "o1",
+    "products": [{
+        "productId": "101",
+        "quantity": 2
+      },
+      {
+        "productId": "201",
+        "quantity": 1
+      }
+    ],
+    "status": "processing",
+    "total": 860000,
+    "userId": "u1"
+  }],
+  "products": [{
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "black",
-      "colors": ["مشکی", "آبی", "طوسی"],
+      "colors": [
+        "مشکی",
+        "آبی",
+        "طوسی"
+      ],
       "description": "این شلوار بسیار راحت و مناسب برای استفاده روزانه است.",
       "discountedPercentage": 85,
       "discountedPrice": 977500,
       "id": "1001",
-      "images": ["/images/hero03.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "پنبه",
       "name": "شلوار جین مردانه",
       "price": 1150000,
@@ -145,12 +173,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "yellow",
-      "colors": ["زرد", "سبز", "قرمز"],
+      "colors": [
+        "زرد",
+        "سبز",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای ورزشکاران و فعالیت های بدنی است.",
       "discountedPercentage": 10,
       "discountedPrice": 60000,
       "id": "4001",
-      "images": ["/images/hero02.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست ورزشی تابستانی",
       "price": 600000,
@@ -204,19 +239,26 @@
         }
       },
       "slug": "product-2",
-      "stock": true,
+      "stock": false,
       "type": "اسپرت"
     },
     {
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "cream",
-      "colors": ["کرم", "سفید", "آبی"],
+      "colors": [
+        "کرم",
+        "سفید",
+        "آبی"
+      ],
       "description": "کلاه بافتنی گرم و نرم مناسب برای فصل های سرد است.",
       "discountedPercentage": 7,
       "discountedPrice": 21000,
       "id": "3001",
-      "images": ["/images/hero04.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پشم",
       "name": "کلاه بافتنی زمستانی",
       "price": 300000,
@@ -270,19 +312,26 @@
         }
       },
       "slug": "product-3",
-      "stock": true,
+      "stock": false,
       "type": "بافتنی"
     },
     {
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "red",
-      "colors": ["قرمز", "آبی", "مشکی"],
+      "colors": [
+        "قرمز",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه شیک و مناسب برای مجالس رسمی می باشد.",
       "discountedPercentage": 15,
       "discountedPrice": 150000,
       "id": "2001",
-      "images": ["/images/hero06.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه رسمی",
       "price": 1000000,
@@ -336,19 +385,26 @@
         }
       },
       "slug": "product-4",
-      "stock": true,
+      "stock": false,
       "type": "کلاسیک"
     },
     {
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "blue",
-      "colors": ["آبی", "مشکی", "سبز"],
+      "colors": [
+        "آبی",
+        "مشکی",
+        "سبز"
+      ],
       "description": "شلوار جین مناسب برای استایل روزمره و راحتی.",
       "discountedPercentage": 20,
       "discountedPrice": 800000,
       "id": "1002",
-      "images": ["/images/hero04.jpg", "/images/hero03.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero03.jpg"
+      ],
       "material": "جین",
       "name": "شلوار جین آبی",
       "price": 1000000,
@@ -381,19 +437,26 @@
         }
       },
       "slug": "product-5",
-      "stock": true,
+      "stock": false,
       "type": "اسلیم فیت"
     },
     {
       "categoryId": "4",
       "categoryName": "ست",
       "color": "green",
-      "colors": ["سبز", "زرد", "آبی"],
+      "colors": [
+        "سبز",
+        "زرد",
+        "آبی"
+      ],
       "description": "ست تابستانی مناسب برای ورزش و پیاده‌روی.",
       "discountedPercentage": 12,
       "discountedPrice": 528000,
       "id": "4002",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "نخ",
       "name": "ست تابستانی مردانه",
       "price": 600000,
@@ -426,19 +489,26 @@
         }
       },
       "slug": "product-6",
-      "stock": true,
+      "stock": false,
       "type": "اسپرت"
     },
     {
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "white",
-      "colors": ["سفید", "آبی", "قرمز"],
+      "colors": [
+        "سفید",
+        "آبی",
+        "قرمز"
+      ],
       "description": "کلاه تابستانی سبک و خنک.",
       "discountedPercentage": 5,
       "discountedPrice": 95000,
       "id": "3002",
-      "images": ["/images/hero02.jpg", "/images/hero03.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero03.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه تابستانی",
       "price": 100000,
@@ -478,12 +548,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "blue",
-      "colors": ["آبی", "سفید", "مشکی"],
+      "colors": [
+        "آبی",
+        "سفید",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای محیط کار.",
       "discountedPercentage": 18,
       "discountedPrice": 820000,
       "id": "2002",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه آبی",
       "price": 1000000,
@@ -523,12 +600,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "gray",
-      "colors": ["طوسی", "مشکی", "آبی"],
+      "colors": [
+        "طوسی",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار راحتی مناسب برای خانه و ورزش.",
       "discountedPercentage": 25,
       "discountedPrice": 600000,
       "id": "1003",
-      "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "پلی استر",
       "name": "شلوار راحتی مردانه",
       "price": 800000,
@@ -561,19 +645,26 @@
         }
       },
       "slug": "product-9",
-      "stock": true,
+      "stock": false,
       "type": "راحتی"
     },
     {
       "categoryId": "4",
       "categoryName": "ست",
       "color": "red",
-      "colors": ["قرمز", "مشکی", "آبی"],
+      "colors": [
+        "قرمز",
+        "مشکی",
+        "آبی"
+      ],
       "description": "ست ورزشی مناسب برای دویدن.",
       "discountedPercentage": 8,
       "discountedPrice": 552000,
       "id": "4003",
-      "images": ["/images/hero03.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست ورزشی مردانه",
       "price": 600000,
@@ -613,12 +704,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "blue",
-      "colors": ["آبی", "سفید", "قرمز"],
+      "colors": [
+        "آبی",
+        "سفید",
+        "قرمز"
+      ],
       "description": "کلاه اسپرت مناسب برای ورزش.",
       "discountedPercentage": 10,
       "discountedPrice": 90000,
       "id": "3003",
-      "images": ["/images/hero04.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه اسپرت",
       "price": 100000,
@@ -651,19 +749,26 @@
         }
       },
       "slug": "product-11",
-      "stock": true,
+      "stock": false,
       "type": "کپ"
     },
     {
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "white",
-      "colors": ["سفید", "آبی", "قرمز"],
+      "colors": [
+        "سفید",
+        "آبی",
+        "قرمز"
+      ],
       "description": "پیراهن مردانه مناسب برای تابستان.",
       "discountedPercentage": 22,
       "discountedPrice": 780000,
       "id": "2003",
-      "images": ["/images/hero02.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه سفید",
       "price": 1000000,
@@ -696,19 +801,26 @@
         }
       },
       "slug": "product-12",
-      "stock": true,
+      "stock": false,
       "type": "کلاسیک"
     },
     {
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "navy",
-      "colors": ["سرمه‌ای", "مشکی", "آبی"],
+      "colors": [
+        "سرمه‌ای",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار پارچه‌ای مناسب برای مجالس رسمی.",
       "discountedPercentage": 30,
       "discountedPrice": 700000,
       "id": "1004",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پشم",
       "name": "شلوار پارچه‌ای مردانه",
       "price": 1000000,
@@ -741,19 +853,26 @@
         }
       },
       "slug": "product-13",
-      "stock": true,
+      "stock": false,
       "type": "راسته"
     },
     {
       "categoryId": "4",
       "categoryName": "ست",
       "color": "black",
-      "colors": ["مشکی", "قرمز", "آبی"],
+      "colors": [
+        "مشکی",
+        "قرمز",
+        "آبی"
+      ],
       "description": "ست ورزشی مناسب برای باشگاه.",
       "discountedPercentage": 15,
       "discountedPrice": 510000,
       "id": "4004",
-      "images": ["/images/hero05.jpg", "/images/hero03.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero03.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست باشگاهی مردانه",
       "price": 600000,
@@ -786,19 +905,26 @@
         }
       },
       "slug": "product-14",
-      "stock": true,
+      "stock": false,
       "type": "اسپرت"
     },
     {
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "red",
-      "colors": ["قرمز", "آبی", "سفید"],
+      "colors": [
+        "قرمز",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه زمستانی گرم و راحت.",
       "discountedPercentage": 12,
       "discountedPrice": 88000,
       "id": "3004",
-      "images": ["/images/hero06.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "پشم",
       "name": "کلاه زمستانی",
       "price": 100000,
@@ -838,12 +964,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "green",
-      "colors": ["سبز", "آبی", "مشکی"],
+      "colors": [
+        "سبز",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای مهمانی.",
       "discountedPercentage": 10,
       "discountedPrice": 900000,
       "id": "2004",
-      "images": ["/images/hero03.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه سبز",
       "price": 1000000,
@@ -883,12 +1016,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "brown",
-      "colors": ["قهوه‌ای", "مشکی", "آبی"],
+      "colors": [
+        "قهوه‌ای",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار پارچه‌ای مناسب برای محیط کار.",
       "discountedPercentage": 18,
       "discountedPrice": 820000,
       "id": "1005",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پشم",
       "name": "شلوار پارچه‌ای قهوه‌ای",
       "price": 1000000,
@@ -921,19 +1061,26 @@
         }
       },
       "slug": "product-17",
-      "stock": true,
+      "stock": false,
       "type": "راسته"
     },
     {
       "categoryId": "4",
       "categoryName": "ست",
       "color": "white",
-      "colors": ["سفید", "آبی", "قرمز"],
+      "colors": [
+        "سفید",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای پیاده‌روی.",
       "discountedPercentage": 20,
       "discountedPrice": 480000,
       "id": "4005",
-      "images": ["/images/hero02.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست پیاده‌روی مردانه",
       "price": 600000,
@@ -973,12 +1120,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "gray",
-      "colors": ["طوسی", "آبی", "سفید"],
+      "colors": [
+        "طوسی",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه اسپرت مناسب برای دویدن.",
       "discountedPercentage": 7,
       "discountedPrice": 93000,
       "id": "3005",
-      "images": ["/images/hero05.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه اسپرت طوسی",
       "price": 100000,
@@ -1018,12 +1172,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "yellow",
-      "colors": ["زرد", "آبی", "مشکی"],
+      "colors": [
+        "زرد",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای تابستان.",
       "discountedPercentage": 14,
       "discountedPrice": 860000,
       "id": "2005",
-      "images": ["/images/hero06.jpg", "/images/hero03.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero03.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه زرد",
       "price": 1000000,
@@ -1063,12 +1224,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "green",
-      "colors": ["سبز", "مشکی", "آبی"],
+      "colors": [
+        "سبز",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار راحتی مناسب برای ورزش.",
       "discountedPercentage": 22,
       "discountedPrice": 780000,
       "id": "1006",
-      "images": ["/images/hero03.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پلی استر",
       "name": "شلوار راحتی سبز",
       "price": 1000000,
@@ -1108,12 +1276,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "blue",
-      "colors": ["آبی", "زرد", "قرمز"],
+      "colors": [
+        "آبی",
+        "زرد",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای ورزشکاران.",
       "discountedPercentage": 18,
       "discountedPrice": 492000,
       "id": "4006",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست ورزشی آبی",
       "price": 600000,
@@ -1153,12 +1328,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "yellow",
-      "colors": ["زرد", "آبی", "سفید"],
+      "colors": [
+        "زرد",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه تابستانی مناسب برای پیاده‌روی.",
       "discountedPercentage": 6,
       "discountedPrice": 94000,
       "id": "3006",
-      "images": ["/images/hero02.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه تابستانی زرد",
       "price": 100000,
@@ -1198,12 +1380,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "gray",
-      "colors": ["طوسی", "آبی", "مشکی"],
+      "colors": [
+        "طوسی",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای محیط کار.",
       "discountedPercentage": 16,
       "discountedPrice": 840000,
       "id": "2006",
-      "images": ["/images/hero05.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه طوسی",
       "price": 1000000,
@@ -1243,12 +1432,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "cream",
-      "colors": ["کرم", "مشکی", "آبی"],
+      "colors": [
+        "کرم",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار پارچه‌ای مناسب برای تابستان.",
       "discountedPercentage": 12,
       "discountedPrice": 880000,
       "id": "1007",
-      "images": ["/images/hero06.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "پنبه",
       "name": "شلوار پارچه‌ای کرم",
       "price": 1000000,
@@ -1288,12 +1484,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "gray",
-      "colors": ["طوسی", "آبی", "قرمز"],
+      "colors": [
+        "طوسی",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای باشگاه.",
       "discountedPercentage": 14,
       "discountedPrice": 516000,
       "id": "4007",
-      "images": ["/images/hero03.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست باشگاهی طوسی",
       "price": 600000,
@@ -1333,12 +1536,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "brown",
-      "colors": ["قهوه‌ای", "آبی", "سفید"],
+      "colors": [
+        "قهوه‌ای",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه زمستانی مناسب برای فصل سرما.",
       "discountedPercentage": 8,
       "discountedPrice": 92000,
       "id": "3007",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پشم",
       "name": "کلاه زمستانی قهوه‌ای",
       "price": 100000,
@@ -1378,12 +1588,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "brown",
-      "colors": ["قهوه‌ای", "آبی", "مشکی"],
+      "colors": [
+        "قهوه‌ای",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای پاییز.",
       "discountedPercentage": 13,
       "discountedPrice": 870000,
       "id": "2007",
-      "images": ["/images/hero04.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه قهوه‌ای",
       "price": 1000000,
@@ -1423,12 +1640,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "red",
-      "colors": ["قرمز", "مشکی", "آبی"],
+      "colors": [
+        "قرمز",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار جین مناسب برای استایل اسپرت.",
       "discountedPercentage": 19,
       "discountedPrice": 810000,
       "id": "1008",
-      "images": ["/images/hero02.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "جین",
       "name": "شلوار جین قرمز",
       "price": 1000000,
@@ -1468,12 +1692,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "brown",
-      "colors": ["قهوه‌ای", "آبی", "قرمز"],
+      "colors": [
+        "قهوه‌ای",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای پاییز.",
       "discountedPercentage": 17,
       "discountedPrice": 498000,
       "id": "4008",
-      "images": ["/images/hero06.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست پاییزی مردانه",
       "price": 600000,
@@ -1513,12 +1744,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "navy",
-      "colors": ["سرمه‌ای", "آبی", "سفید"],
+      "colors": [
+        "سرمه‌ای",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه اسپرت مناسب برای ورزش.",
       "discountedPercentage": 9,
       "discountedPrice": 91000,
       "id": "3008",
-      "images": ["/images/hero03.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه اسپرت سرمه‌ای",
       "price": 100000,
@@ -1558,12 +1796,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "navy",
-      "colors": ["سرمه‌ای", "آبی", "مشکی"],
+      "colors": [
+        "سرمه‌ای",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای مجالس رسمی.",
       "discountedPercentage": 11,
       "discountedPrice": 890000,
       "id": "2008",
-      "images": ["/images/hero04.jpg", "/images/hero03.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero03.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه سرمه‌ای",
       "price": 1000000,
@@ -1603,12 +1848,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "yellow",
-      "colors": ["زرد", "مشکی", "آبی"],
+      "colors": [
+        "زرد",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار راحتی مناسب برای تابستان.",
       "discountedPercentage": 15,
       "discountedPrice": 850000,
       "id": "1009",
-      "images": ["/images/hero04.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "پنبه",
       "name": "شلوار راحتی زرد",
       "price": 1000000,
@@ -1648,12 +1900,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "navy",
-      "colors": ["سرمه‌ای", "آبی", "قرمز"],
+      "colors": [
+        "سرمه‌ای",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای ورزشکاران.",
       "discountedPercentage": 13,
       "discountedPrice": 522000,
       "id": "4009",
-      "images": ["/images/hero05.jpg", "/images/hero03.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero03.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست ورزشی سرمه‌ای",
       "price": 600000,
@@ -1693,12 +1952,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "green",
-      "colors": ["سبز", "آبی", "سفید"],
+      "colors": [
+        "سبز",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه تابستانی مناسب برای ورزش.",
       "discountedPercentage": 5,
       "discountedPrice": 95000,
       "id": "3009",
-      "images": ["/images/hero02.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه تابستانی سبز",
       "price": 100000,
@@ -1738,12 +2004,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "cream",
-      "colors": ["کرم", "آبی", "مشکی"],
+      "colors": [
+        "کرم",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای تابستان.",
       "discountedPercentage": 12,
       "discountedPrice": 880000,
       "id": "2009",
-      "images": ["/images/hero06.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه کرم",
       "price": 1000000,
@@ -1783,12 +2056,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "white",
-      "colors": ["سفید", "مشکی", "آبی"],
+      "colors": [
+        "سفید",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار پارچه‌ای مناسب برای تابستان.",
       "discountedPercentage": 10,
       "discountedPrice": 900000,
       "id": "1010",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پنبه",
       "name": "شلوار پارچه‌ای سفید",
       "price": 1000000,
@@ -1828,12 +2108,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "cream",
-      "colors": ["کرم", "آبی", "قرمز"],
+      "colors": [
+        "کرم",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای تابستان.",
       "discountedPercentage": 16,
       "discountedPrice": 504000,
       "id": "4010",
-      "images": ["/images/hero04.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست تابستانی کرم",
       "price": 600000,
@@ -1873,12 +2160,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "black",
-      "colors": ["مشکی", "آبی", "سفید"],
+      "colors": [
+        "مشکی",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه اسپرت مناسب برای ورزش.",
       "discountedPercentage": 8,
       "discountedPrice": 92000,
       "id": "3010",
-      "images": ["/images/hero05.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه اسپرت مشکی",
       "price": 100000,
@@ -1918,12 +2212,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "black",
-      "colors": ["مشکی", "آبی", "قرمز"],
+      "colors": [
+        "مشکی",
+        "آبی",
+        "قرمز"
+      ],
       "description": "پیراهن مردانه مناسب برای مجالس رسمی.",
       "discountedPercentage": 15,
       "discountedPrice": 850000,
       "id": "2010",
-      "images": ["/images/hero06.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه مشکی",
       "price": 1000000,
@@ -1963,12 +2264,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "blue",
-      "colors": ["آبی", "مشکی", "سبز"],
+      "colors": [
+        "آبی",
+        "مشکی",
+        "سبز"
+      ],
       "description": "شلوار جین مناسب برای استایل روزمره.",
       "discountedPercentage": 20,
       "discountedPrice": 800000,
       "id": "1011",
-      "images": ["/images/hero03.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "جین",
       "name": "شلوار جین آبی",
       "price": 1000000,
@@ -2008,12 +2316,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "red",
-      "colors": ["قرمز", "آبی", "زرد"],
+      "colors": [
+        "قرمز",
+        "آبی",
+        "زرد"
+      ],
       "description": "ست ورزشی مناسب برای ورزشکاران.",
       "discountedPercentage": 18,
       "discountedPrice": 492000,
       "id": "4011",
-      "images": ["/images/hero02.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست ورزشی قرمز",
       "price": 600000,
@@ -2053,12 +2368,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "white",
-      "colors": ["سفید", "آبی", "قرمز"],
+      "colors": [
+        "سفید",
+        "آبی",
+        "قرمز"
+      ],
       "description": "کلاه تابستانی مناسب برای پیاده‌روی.",
       "discountedPercentage": 6,
       "discountedPrice": 94000,
       "id": "3011",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پنبه",
       "name": "کلاه تابستانی سفید",
       "price": 100000,
@@ -2098,12 +2420,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "gray",
-      "colors": ["طوسی", "آبی", "مشکی"],
+      "colors": [
+        "طوسی",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای محیط کار.",
       "discountedPercentage": 16,
       "discountedPrice": 840000,
       "id": "2011",
-      "images": ["/images/hero05.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero05.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه طوسی",
       "price": 1000000,
@@ -2143,12 +2472,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "cream",
-      "colors": ["کرم", "مشکی", "آبی"],
+      "colors": [
+        "کرم",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار پارچه‌ای مناسب برای تابستان.",
       "discountedPercentage": 12,
       "discountedPrice": 880000,
       "id": "1012",
-      "images": ["/images/hero06.jpg", "/images/hero02.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero02.jpg"
+      ],
       "material": "پنبه",
       "name": "شلوار پارچه‌ای کرم",
       "price": 1000000,
@@ -2188,12 +2524,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "gray",
-      "colors": ["طوسی", "آبی", "قرمز"],
+      "colors": [
+        "طوسی",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای باشگاه.",
       "discountedPercentage": 14,
       "discountedPrice": 516000,
       "id": "4012",
-      "images": ["/images/hero03.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero03.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست باشگاهی طوسی",
       "price": 600000,
@@ -2233,12 +2576,19 @@
       "categoryId": "3",
       "categoryName": "کلاه",
       "color": "brown",
-      "colors": ["قهوه‌ای", "آبی", "سفید"],
+      "colors": [
+        "قهوه‌ای",
+        "آبی",
+        "سفید"
+      ],
       "description": "کلاه زمستانی مناسب برای فصل سرما.",
       "discountedPercentage": 8,
       "discountedPrice": 92000,
       "id": "3012",
-      "images": ["/images/hero04.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پشم",
       "name": "کلاه زمستانی قهوه‌ای",
       "price": 100000,
@@ -2278,12 +2628,19 @@
       "categoryId": "2",
       "categoryName": "پیراهن",
       "color": "brown",
-      "colors": ["قهوه‌ای", "آبی", "مشکی"],
+      "colors": [
+        "قهوه‌ای",
+        "آبی",
+        "مشکی"
+      ],
       "description": "پیراهن مردانه مناسب برای پاییز.",
       "discountedPercentage": 13,
       "discountedPrice": 870000,
       "id": "2012",
-      "images": ["/images/hero04.jpg", "/images/hero06.jpg"],
+      "images": [
+        "/images/hero04.jpg",
+        "/images/hero06.jpg"
+      ],
       "material": "کتان",
       "name": "پیراهن مردانه قهوه‌ای",
       "price": 1000000,
@@ -2323,12 +2680,19 @@
       "categoryId": "1",
       "categoryName": "شلوار",
       "color": "red",
-      "colors": ["قرمز", "مشکی", "آبی"],
+      "colors": [
+        "قرمز",
+        "مشکی",
+        "آبی"
+      ],
       "description": "شلوار جین مناسب برای استایل اسپرت.",
       "discountedPercentage": 19,
       "discountedPrice": 810000,
       "id": "1013",
-      "images": ["/images/hero02.jpg", "/images/hero05.jpg"],
+      "images": [
+        "/images/hero02.jpg",
+        "/images/hero05.jpg"
+      ],
       "material": "جین",
       "name": "شلوار جین قرمز",
       "price": 1000000,
@@ -2368,12 +2732,19 @@
       "categoryId": "4",
       "categoryName": "ست",
       "color": "brown",
-      "colors": ["قهوه‌ای", "آبی", "قرمز"],
+      "colors": [
+        "قهوه‌ای",
+        "آبی",
+        "قرمز"
+      ],
       "description": "ست ورزشی مناسب برای پاییز.",
       "discountedPercentage": 17,
       "discountedPrice": 498000,
       "id": "4013",
-      "images": ["/images/hero06.jpg", "/images/hero04.jpg"],
+      "images": [
+        "/images/hero06.jpg",
+        "/images/hero04.jpg"
+      ],
       "material": "پلی استر",
       "name": "ست پاییزی مردانه",
       "price": 600000,
@@ -2410,14 +2781,12 @@
       "type": "اسپرت"
     }
   ],
-  "users": [
-    {
-      "email": "ali@example.com",
-      "id": "u1",
-      "lastName": "Rezaei",
-      "name": "Ali",
-      "password": "alipassword123",
-      "userName": "ali-user"
-    }
-  ]
+  "users": [{
+    "email": "ali@example.com",
+    "id": "u1",
+    "lastName": "Rezaei",
+    "name": "Ali",
+    "password": "alipassword123",
+    "userName": "ali-user"
+  }]
 }

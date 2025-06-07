@@ -1,4 +1,4 @@
-export const dataFilter = {
+export const dataColorFilter = {
   colors: {
     title: "رنگ",
     label: "colors",
@@ -19,6 +19,9 @@ export const dataFilter = {
       { id: "color=navy&", name: "سرمه‌ای" },
     ],
   },
+};
+
+export const dataSizeFilter = {
   sizes: {
     title: "سایز",
     label: "sizes",
@@ -30,6 +33,24 @@ export const dataFilter = {
       { id: "size=XL&", name: "ایکس لارج" },
       { id: "size=XXL&", name: "دو ایکس لارج" },
       { id: "size=XXXL&", name: "سه ایکس لارج" },
+    ],
+  },
+  sizeNumber: {
+    title: "سایز",
+    label: "sizes",
+    id: 124,
+    filters: [
+      { id: "size=30&", name: "30" },
+      { id: "size=31&", name: "31" },
+      { id: "size=32&", name: "32" },
+      { id: "size=33&", name: "33" },
+      { id: "size=34&", name: "34" },
+      { id: "size=35&", name: "35" },
+      { id: "size=36&", name: "36" },
+      { id: "size=37&", name: "37" },
+      { id: "size=38&", name: "38" },
+      { id: "size=39&", name: "39" },
+      { id: "size=40&", name: "40" },
     ],
   },
 };

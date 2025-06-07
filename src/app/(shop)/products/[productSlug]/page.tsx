@@ -28,8 +28,6 @@ async function ProductId({ params }: ICategory) {
   if (error) return <ProductError error={error} />;
   if (!data) return <ProductError error={error} />;
 
-  console.log(data);
-
   return (
     <Container>
       <Grid container spacing={3} sx={{ paddingY: { xs: 10, md: 10 } }}>
