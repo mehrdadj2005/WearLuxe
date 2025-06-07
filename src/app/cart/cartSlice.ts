@@ -16,18 +16,10 @@ export interface IInitialState {
 }
 
 const initialState: IInitialState = {
-  cart: [
-    // {
-    //   productId: "01",
-    //   name: "ست شلوار و پیراهن",
-    //   quantity: 2,
-    //   unitPrice: 1850000,
-    //   totalPrice: 3700000,
-    //   image: "/images/hero05.jpg",
-    //   imageTitle: "ست شلوار و پیراهن",
-    //   size: "L",
-    // },
-  ],
+  cart:
+    typeof window !== "undefined" && JSON.parse(localStorage.getItem("cart")!)
+      ? JSON.parse(localStorage.getItem("cart")!)
+      : [],
 };
 
 const cartSlice = createSlice({
@@ -85,6 +77,9 @@ const cartSlice = createSlice({
           cartSlice.caseReducers.removeProduct(state, action);
         }
       }
+
+      // adding state to localStorage
+      localStorage.setItem("cart", JSON.stringify(state.cart));
     },
     clearCart(state) {
       state.cart = [];
