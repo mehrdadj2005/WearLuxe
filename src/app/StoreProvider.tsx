@@ -16,7 +16,8 @@ export default function StoreProvider({
 
         storeRef.current.subscribe(() => {
             const state = storeRef.current!.getState();
-            saveCartToLocalStorage(state.cart.cart)
+            if (typeof window !== "undefined")
+                saveCartToLocalStorage(state.cart.cart)
         })
     }
 
