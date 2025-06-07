@@ -59,6 +59,9 @@ export default function PaginationWithLinks({
               item.page == activePage
                 ? "var(--color-primary-400) !important"
                 : "none",
+            ":hover": {
+              bgcolor: "var(--color-primary-200) !important",
+            },
           }}
           component={Link}
           href={buildHref(item.page!)}

@@ -112,7 +112,14 @@ export default async function CategoryPage({
           ))}
         </Box>
         {pageNumbers.length > 1 && (
-          <Box sx={{ display: "flex", gap: "8px", justifyContent: "center" }}>
+          <Box
+            sx={{
+              display: "flex",
+              gap: "8px",
+              justifyContent: "center",
+              py: "12px",
+            }}
+          >
             <PaginationWithLinks
               count={pageNumbers.length}
               categorySlug={(await params).categorySlug.toString()}
