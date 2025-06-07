@@ -2,7 +2,6 @@ import Container from "@/components/container";
 import { getProduct } from "@/services/getProduct";
 import { Box, Divider, Grid, List, ListItem, Typography } from "@mui/material";
 import Image from "next/image";
-import ProductError from "./error";
 import { ArrowLeft } from "@mui/icons-material";
 import ProductDetails from "./ProductDetails";
 import ProductActionGroup from "./ProductActionGroup";
@@ -19,7 +18,7 @@ async function ProductId({ params }: ICategory) {
     `http://localhost:4000/products/${(await params).productSlug}`
   );
 
-  if (error || Object.keys(data).length === 0 || !data) return <ProductError error={error} />;
+  if (error || Object.keys(data).length === 0 || !data) return <Box>No product found</Box>;
 
   return (
     <Container>
