@@ -13,16 +13,10 @@ interface ICategory {
   params: Promise<{ productSlug: string }>;
 }
 
-// export async function generateStaticParams() {
-//     return categories.map((category) => ({
-//         productSlug: category.id,
-//     }));
-// }
 
 async function ProductId({ params }: ICategory) {
-  const url = await params;
   const { data, error } = await getProduct<IProduct>(
-    `http://localhost:4000/products/${url.productSlug}`
+    `http://localhost:4000/products/${(await params).productSlug}`
   );
 
   if (error) return <ProductError error={error} />;
@@ -33,8 +27,8 @@ async function ProductId({ params }: ICategory) {
       <Grid container spacing={3} sx={{ paddingY: { xs: 10, md: 10 } }}>
         <Grid size={{ xs: 12, md: 5 }}>
           <Image
-            src={data?.images[0] ?? ""}
-            alt={data?.name ?? ""}
+            src={data.images[0] ?? ""}
+            alt={data.name ?? ""}
             width={500}
             height={500}
             className="w-full"
@@ -142,7 +136,7 @@ async function ProductId({ params }: ICategory) {
                 >
                   :
                 </Typography>
-                <Typography>{Object.keys(data?.sizes).join(", ")}</Typography>
+                <Typography>{Object.keys(data.sizes).join(", ")}</Typography>
               </ListItem>
 
               <ListItem
@@ -162,7 +156,7 @@ async function ProductId({ params }: ICategory) {
                 >
                   :
                 </Typography>
-                <Typography>{data?.colors.join(", ")}</Typography>
+                <Typography>{data.colors.join(", ")}</Typography>
               </ListItem>
 
               <ListItem
@@ -182,7 +176,7 @@ async function ProductId({ params }: ICategory) {
                 >
                   :
                 </Typography>
-                <Typography>{data?.stock ? "موجود" : "ناموجود"}</Typography>
+                <Typography>{data.stock ? "موجود" : "ناموجود"}</Typography>
               </ListItem>
 
               <ListItem
@@ -198,7 +192,7 @@ async function ProductId({ params }: ICategory) {
                 <Typography color="textDisabled" sx={{ marginLeft: 1 }}>
                   :
                 </Typography>
-                <Typography>{data?.description}</Typography>
+                <Typography>{data.description}</Typography>
               </ListItem>
             </List>
           </Box>
