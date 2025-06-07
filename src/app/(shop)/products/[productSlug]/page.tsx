@@ -19,8 +19,7 @@ async function ProductId({ params }: ICategory) {
     `http://localhost:4000/products/${(await params).productSlug}`
   );
 
-  if (error) return <ProductError error={error} />;
-  if (!data) return <ProductError error={error} />;
+  if (error || Object.keys(data).length === 0 || !data) return <ProductError error={error} />;
 
   return (
     <Container>
