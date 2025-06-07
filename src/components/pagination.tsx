@@ -50,7 +50,7 @@ export default function PaginationWithLinks({
       hideNextButton
       hidePrevButton
       shape="rounded"
-      sx={{ bgcolor: "none" }}
+      sx={{ bgcolor: "none", direction: "ltr" }}
       renderItem={(item) => (
         <PaginationItem
           sx={{
