@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "NEXT_IGNORE_ESLINT_ERRORS=true next build",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "json-server": "json-server --watch src/data/db.json --port 4000"
@@ -34,5 +34,13 @@
     "eslint-config-next": "15.2.4",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "sharp"
+    ],
+    "onlyBuiltDependencies": [
+      "sharp"
+    ]
   }
 }
