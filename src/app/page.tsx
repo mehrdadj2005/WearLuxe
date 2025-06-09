@@ -31,12 +31,14 @@ export default async function HomePage() {
     <>
       <HeroSection />
       <Container
+        className="!px:w-full !px-3/4"
         sx={{
           backgroundColor: "var(--color-neutral-200)",
           borderRadius: "18px",
           display: "flex",
           padding: "30px 0",
           justifyContent: "space-around",
+          flexWrap: "wrap",
         }}
       >
         {dataOptions.map((option) => (
