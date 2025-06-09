@@ -125,8 +125,10 @@ function Checkout() {
             error={!!errors.city}
             helperText={errors.city}
             variant="outlined"
-            SelectProps={{
-              native: true,
+            slotProps={{
+              select: {
+                native: true,
+              },
             }}
           >
             <option value="">انتخاب شهر</option>
