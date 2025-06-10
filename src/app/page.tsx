@@ -26,7 +26,7 @@ export default async function HomePage() {
   const { data: landingBaner } = await getProduct<IBanner[]>(
     "http://localhost:4000/banners"
   );
-  const { alt, src } = landingBaner[0];
+
   return (
     <>
       <HeroSection />
@@ -111,8 +111,8 @@ export default async function HomePage() {
             height: "100%",
           }}
           component="img"
-          image={src}
-          alt={alt}
+          image={landingBaner[0].src}
+          alt={landingBaner[0].alt}
         />
       </Container>
       <ProductSlider sx={{ pt: "20px" }} data={dataSets} />
