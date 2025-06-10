@@ -228,7 +228,8 @@ export default function ProductDetailsFilter({
           </AccordionSummary>
           <AccordionDetails>
             {slugValid
-              ? sizeNumber.filters.map(({ id, name }) => {
+              ? Array.isArray(sizeNumber.filters) &&
+                sizeNumber.filters.map(({ id, name }) => {
                   const isChecked =
                     searchParams.get("size") ===
                     id.replace("&", "").split("=")[1];
@@ -256,7 +257,8 @@ export default function ProductDetailsFilter({
                     </FormGroup>
                   );
                 })
-              : sizes.filters.map(({ id, name }) => {
+              : Array.isArray(sizes.filters) &&
+                sizes.filters.map(({ id, name }) => {
                   const isChecked =
                     searchParams.get("size") ===
                     id.replace("&", "").split("=")[1];

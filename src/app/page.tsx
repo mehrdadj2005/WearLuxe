@@ -41,31 +41,35 @@ export default async function HomePage() {
           flexWrap: "wrap",
         }}
       >
-        {dataOptions.map((option) => (
-          <Box
-            key={option.id}
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              flexDirection: "row",
-              gap: "8px",
-            }}
-          >
-            <CardMedia
-              component="img"
-              image={option.src}
-              alt={option.name}
+        {Array.isArray(dataOptions) &&
+          dataOptions.map((option) => (
+            <Box
+              key={option.id}
               sx={{
-                width: "40px",
-                height: "auto",
-                borderRadius: "12px",
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "row",
+                gap: "8px",
               }}
-            />
-            <Typography variant="h6" sx={{ color: "var(--color-neutral-600)" }}>
-              {option.name}
-            </Typography>
-          </Box>
-        ))}
+            >
+              <CardMedia
+                component="img"
+                image={option.src}
+                alt={option.name}
+                sx={{
+                  width: "40px",
+                  height: "auto",
+                  borderRadius: "12px",
+                }}
+              />
+              <Typography
+                variant="h6"
+                sx={{ color: "var(--color-neutral-600)" }}
+              >
+                {option.name}
+              </Typography>
+            </Box>
+          ))}
       </Container>
       <ProductSlider sx={{ pt: "20px" }} data={dataShirts} />
       <Container>
