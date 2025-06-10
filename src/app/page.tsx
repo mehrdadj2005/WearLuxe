@@ -23,9 +23,21 @@ export default async function HomePage() {
   const { data: dataOptions } = await getProduct<IOption[]>(
     "http://localhost:4000/options"
   );
-  const { data: landingBaner } = await getProduct<IBanner[]>(
-    "http://localhost:4000/banners"
-  );
+  // const { data: landingBaner } = await getProduct<IBanner[]>(
+  //   "http://localhost:4000/banners"
+  // );
+
+  const { data: landingBaner, error: landingBanerError } = await getProduct<
+    IBanner[]
+  >(`${process.env.NEXT_PUBLIC_API_BASE_URL}/banners`);
+
+  if (
+    landingBanerError ||
+    !Array.isArray(landingBaner) ||
+    landingBaner.length === 0
+  ) {
+    console.warn("landingBaner fetch failed or empty:", landingBanerError);
+  }
 
   console.log(dataOptions);
   console.log(landingBaner);
@@ -106,17 +118,24 @@ export default async function HomePage() {
       <ProductSlider sx={{ pt: "20px" }} data={dataCaps} />
       <ProductSlider sx={{ pt: "20px" }} data={dataPants} />
       <Container sx={{ width: "100%", height: "200px", pt: "20px" }}>
-        <CardMedia
-          sx={{
-            borderRadius: "12px",
-            overflow: "hidden",
-            width: "100%",
-            height: "100%",
-          }}
-          component="img"
-          image={landingBaner?.[0]?.src || "/images/default-banner.jpg"}
-          alt={landingBaner?.[0]?.alt || "default banner"}
-        />
+        {landingBaner &&
+          Array.isArray(landingBaner) &&
+          landingBaner.length > 0 &&
+          landingBaner[0].src && (
+            <Container sx={{ width: "100%", height: "200px", pt: "20px" }}>
+              <CardMedia
+                sx={{
+                  borderRadius: "12px",
+                  overflow: "hidden",
+                  width: "100%",
+                  height: "100%",
+                }}
+                component="img"
+                image={landingBaner[0].src || "/images/fallback-banner.jpg"}
+                alt={landingBaner[0].alt || "banner"}
+              />
+            </Container>
+          )}
       </Container>
       <ProductSlider sx={{ pt: "20px" }} data={dataSets} />
     </>
