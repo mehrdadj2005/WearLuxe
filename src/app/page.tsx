@@ -27,6 +27,9 @@ export default async function HomePage() {
     "http://localhost:4000/banners"
   );
 
+  console.log(dataOptions);
+  console.log(landingBaner);
+
   return (
     <>
       <HeroSection />
@@ -111,8 +114,8 @@ export default async function HomePage() {
             height: "100%",
           }}
           component="img"
-          image={landingBaner[0].src}
-          alt={landingBaner[0].alt}
+          image={landingBaner?.[0]?.src || "/images/default-banner.jpg"}
+          alt={landingBaner?.[0]?.alt || "default banner"}
         />
       </Container>
       <ProductSlider sx={{ pt: "20px" }} data={dataSets} />
