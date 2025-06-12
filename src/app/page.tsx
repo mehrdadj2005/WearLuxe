@@ -100,6 +100,7 @@ export default async function HomePage() {
           />
         </Box>
       </Container>
+      
       <ProductSlider sx={{ pt: "20px" }} data={dataCaps} />
       <ProductSlider sx={{ pt: "20px" }} data={dataPants} />
       <Container sx={{ width: "100%", height: "200px", pt: "20px" }}>
